@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "763980317639",
+    "firebase_url": "https://jobandtutionfinder.firebaseio.com",
+    "project_id": "jobandtutionfinder",
+    "storage_bucket": "jobandtutionfinder.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:763980317639:android:ee3657cc56bda9ef",
+        "android_client_info": {
+          "package_name": "com.example.sara.jobandtutionfinder"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "763980317639-v52af97phmp4n8m5fplmc4dqoekgiemt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7qsSkf3_Oz67GzyXNZbNslYT5IZfO-0Y"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
