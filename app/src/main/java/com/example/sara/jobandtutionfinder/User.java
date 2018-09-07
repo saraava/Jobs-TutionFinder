@@ -1,7 +1,7 @@
 package com.example.sara.jobandtutionfinder;
 
 public class User {
-    public String name, email, studentid;
+    public String name, email, studentid,pere;
 
     public User(){
 
@@ -11,5 +11,6 @@ public class User {
         this.name = name;
         this.email = email;
         this.studentid = studentid;
+        this.pere="shovon";
     }
 }
