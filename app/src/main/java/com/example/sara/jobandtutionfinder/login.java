@@ -82,7 +82,7 @@ public class login extends AppCompatActivity {
                                 FirebaseUser user = mAuth.getCurrentUser();
                                 Toast.makeText(getApplicationContext(),"Login success",Toast.LENGTH_SHORT).show();
                                 finish();
-                                Intent toy = new Intent(login.this,register.class);
+                                Intent toy = new Intent(login.this,profilefrag.class);
                                 startActivity(toy);
 
                             }
