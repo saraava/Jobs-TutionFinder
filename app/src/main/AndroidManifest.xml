@@ -18,8 +18,21 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".login" />
-        <activity android:name=".register" />
+        <activity android:name=".login"/>
+        <activity android:name=".register"/>
+        <activity android:name=".profilefrag"/>
+        <activity android:name=".partfrag"/>
+        <activity android:name=".fullfrag"/>
+
+
+
+        <activity
+
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionbar"/>
+
+
     </application>
 
 </manifest>

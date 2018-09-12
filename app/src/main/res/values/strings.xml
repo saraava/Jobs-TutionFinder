@@ -10,5 +10,15 @@
     <string name="nav_header_subtitle">ajbina@gmail.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+    <string name="profil">Profilr</string>
+    <string name="part">Part Time</string>
+    <string name="full">Full Time</string>
+    <string name="coaching">Coaching</string>
+    <string name="cv">CV</string>
+    <string name="book">Books</string>
+    <string name="setting">Settings</string>
+    <string name="layout">Layout</string>
+    <string name="log">You are successfully login into your account</string>
+
 
 </resources>
