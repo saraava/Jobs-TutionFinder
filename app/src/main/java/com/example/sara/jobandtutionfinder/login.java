@@ -24,7 +24,7 @@ public class login extends AppCompatActivity {
     private ProgressDialog progressDialog;
     private FirebaseAuth mAuth;
     private Button loginbtn,registerbtn;
-    private String email,password;
+    private String email="",password="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +39,7 @@ public class login extends AppCompatActivity {
         registerbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent toy = new Intent(login.this, register.class);
+                Intent toy = new Intent(login.this, MainActivity.class);
 
                 startActivity(toy);
             }
@@ -82,7 +82,7 @@ public class login extends AppCompatActivity {
                                 FirebaseUser user = mAuth.getCurrentUser();
                                 Toast.makeText(getApplicationContext(),"Login success",Toast.LENGTH_SHORT).show();
                                 finish();
-                                Intent toy = new Intent(login.this,register.class);
+                                Intent toy = new Intent(login.this,MainActivity.class);
                                 startActivity(toy);
 
                             }

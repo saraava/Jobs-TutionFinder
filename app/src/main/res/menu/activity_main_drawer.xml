@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_profile"
+            android:icon="@drawable/user"
+            android:title="Profile" />
+        <item
+            android:id="@+id/nav_part"
+            android:icon="@drawable/job"
+            android:title="@string/part" />
+        <item
+            android:id="@+id/nav_full"
+            android:icon="@drawable/job"
+            android:title="@string/full" />
+        <item
+            android:id="@+id/nav_coaching"
+            android:icon="@drawable/teacher"
+            android:title="@string/coaching" />
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/teacher"
+            android:title="Home Tutor" />
+        <item
+            android:id="@+id/nav_cv"
+            android:icon="@drawable/curriculum"
+            android:title="@string/cv" />
+        <item
+            android:id="@+id/nav_book"
+            android:icon="@drawable/book"
+            android:title="@string/book" />
+    </group>
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Share" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Send" />
+        </menu>
+    </item>
+
+</menu>

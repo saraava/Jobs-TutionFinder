@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".profilefrag">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView4"
+        android:layout_alignTop="@+id/textView2"
+        android:text="Ajbina Nusrat"
+        android:layout_alignLeft="@+id/textView4" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="56dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView3"
+        android:layout_centerVertical="true"
+        android:text="Name"
+        android:layout_alignLeft="@+id/textView3" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="202dp"
+        android:layout_marginStart="114dp"
+        android:text="Student_ID"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="114dp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/textView3"
+        android:layout_marginEnd="88dp"
+        android:text="201614040"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="88dp" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/textView2"
+        android:layout_marginBottom="139dp"
+        android:text="Email_ID" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/textView5"
+        android:layout_marginEnd="55dp"
+        android:text="@string/nav_header_subtitle"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="55dp" />
+
+
+</RelativeLayout>
