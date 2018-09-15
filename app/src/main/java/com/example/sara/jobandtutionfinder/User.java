@@ -27,7 +27,9 @@ public class User {
         return studentid;
     }
 
-
+    public void setStudentid(String studentid) {
+        this.studentid = studentid;
+    }
 
     public User(String name, String email, String studentid) {
         this.name = name;
