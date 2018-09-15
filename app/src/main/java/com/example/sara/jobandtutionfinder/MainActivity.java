@@ -102,14 +102,26 @@ public class MainActivity extends AppCompatActivity
 
 
         } else if (id == R.id.nav_coaching) {
+            Intent i=new Intent(getApplicationContext(),fullfrag.class);
+            startActivity(i);
+            Toast.makeText(this,"coaching",Toast.LENGTH_LONG).show();
 
 
         } else if (id == R.id.nav_home) {
+            Intent i=new Intent(getApplicationContext(),fullfrag.class);
+            startActivity(i);
+            Toast.makeText(this,"Home Tutor",Toast.LENGTH_LONG).show();
 
         } else if (id == R.id.nav_cv) {
+            Intent i=new Intent(getApplicationContext(),fullfrag.class);
+            startActivity(i);
+            Toast.makeText(this,"CV",Toast.LENGTH_LONG).show();
 
         }
         else if (id == R.id.nav_book) {
+                Intent i=new Intent(getApplicationContext(),fullfrag.class);
+                startActivity(i);
+                Toast.makeText(this,"Book",Toast.LENGTH_LONG).show();
 
         }
 
