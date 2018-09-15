@@ -102,9 +102,10 @@ public class MainActivity extends AppCompatActivity
 
 
         } else if (id == R.id.nav_coaching) {
-            Intent i=new Intent(getApplicationContext(), fullfrag.class);
+            Intent i=new Intent(getApplicationContext(),fullfrag.class);
             startActivity(i);
-            Toast.makeText(this,"coaching",Toast.LENGTH_LONG).show();
+            Toast.makeText(this,"Coaching",Toast.LENGTH_LONG).show();
+
 
 
         } else if (id == R.id.nav_home) {
