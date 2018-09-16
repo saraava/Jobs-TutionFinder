@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/chng_pass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/update_profile"
+        android:layout_marginTop="200dp"
+        android:text="Change password"
+        android:textSize="22sp"
+        android:layout_alignLeft="@+id/update_profile" />
+
+    <Button
+        android:id="@+id/update_profile"
+        android:layout_width="236dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="172dp"
+        android:text="Update profile"
+        android:textSize="22sp" />
+</RelativeLayout>

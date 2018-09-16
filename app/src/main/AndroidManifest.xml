@@ -23,6 +23,7 @@
         <activity android:name=".profilefrag"/>
         <activity android:name=".partfrag"/>
         <activity android:name=".fullfrag"/>
+        <activity android:name=".settingfrag"/>
 
 
 

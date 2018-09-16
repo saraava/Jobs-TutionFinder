@@ -125,6 +125,18 @@ public class MainActivity extends AppCompatActivity
                 Toast.makeText(this,"Book",Toast.LENGTH_LONG).show();
 
         }
+        else if(id==R.id.nav_settings){
+            Intent i=new Intent(getApplicationContext(),settingfrag.class);
+            startActivity(i);
+            Toast.makeText(this,"setting",Toast.LENGTH_LONG).show();
+
+        }
+        else if(id==R.id.nav_logout){
+            Intent i=new Intent(getApplicationContext(),login.class);
+            startActivity(i);
+            Toast.makeText(this,"successfully logout",Toast.LENGTH_LONG).show();
+
+        }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
