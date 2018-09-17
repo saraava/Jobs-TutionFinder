@@ -28,7 +28,8 @@
             android:name=".MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionbar" />
-        <activity android:name=".changePass"></activity>
+        <activity android:name=".changePass" />
+        <activity android:name=".updateProfile"></activity>
     </application>
 
 </manifest>
