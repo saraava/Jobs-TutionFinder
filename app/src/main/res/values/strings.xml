@@ -20,5 +20,10 @@
     <string name="layout">Layout</string>
     <string name="log">You are successfully login into your account</string>
 
+    <array name="gender">
+        <item name="Male">Male</item>
+        <item name="Female">Female</item>
+    </array>
+
 
 </resources>

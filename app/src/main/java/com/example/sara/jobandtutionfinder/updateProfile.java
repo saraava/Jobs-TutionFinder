@@ -67,13 +67,13 @@ public class updateProfile extends AppCompatActivity {
 
 
         // creating the object
-        User boi = new User(name, email ,id);
+        //User boi = new User(name, email ,id);
 
-        myRef.setValue(boi);
+       // myRef.setValue(boi);
         // set the value
 
 
-        Toast.makeText(this, "Book Info Updated!", Toast.LENGTH_SHORT).show();
+       // Toast.makeText(this, "Book Info Updated!", Toast.LENGTH_SHORT).show();
 
     }
 }

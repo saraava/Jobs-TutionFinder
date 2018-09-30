@@ -1,182 +1,185 @@
 package com.example.sara.jobandtutionfinder;
 
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.net.Uri;
+import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 
-public class register extends AppCompatActivity implements View.OnClickListener{
+import java.io.IOException;
 
-    private EditText nametxt;
-    private EditText stidtxt;
-    private EditText emailtxt;
-    private EditText passtxt;
-    private EditText confpasstxt;
-    private Button confirmbtn;
-    private ProgressBar progressBar;
-    private FirebaseAuth mAuth;
+public class register extends AppCompatActivity{
+
+    private EditText userName,userlevel,userdept, userEmail, userid;
+    Spinner genderspinner;
+    private Button regButton;
+    private FirebaseAuth firebaseAuth;
+    private ImageView userProfilePic;
+    String email, name,dept,level,gender,stid;
+    private static int PICK_IMAGE = 123;
+    Uri imagePath;
+    FirebaseStorage firebaseStorage;
+    StorageReference storageReference;
+    Context context;
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if(requestCode == PICK_IMAGE && resultCode == RESULT_OK && data.getData() != null){
+            imagePath = data.getData();
+            try {
+                Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), imagePath);
+                userProfilePic.setImageBitmap(bitmap);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        nametxt = findViewById(R.id.editText);
-        stidtxt = findViewById(R.id.editText2);
-        emailtxt = findViewById(R.id.editText3);
-        passtxt = findViewById(R.id.editText4);
-        confpasstxt = findViewById(R.id.editText5);
-        confirmbtn = findViewById(R.id.conf);
-        progressBar = findViewById(R.id.progressBar2);
+        context = this;
 
-        progressBar.setVisibility(View.GONE);
-
-        mAuth = FirebaseAuth.getInstance();
-
-        confirmbtn.setOnClickListener(this);
-
-    }
-    private void registerUser() {
-        final String name = nametxt.getText().toString().trim();
-        final String email = emailtxt.getText().toString().trim();
-        final String studentid = stidtxt.getText().toString().trim();
-        String password = passtxt.getText().toString().trim();
-        final String confpassword = confpasstxt.getText().toString().trim();
-
-        if (name.isEmpty()) {
-            nametxt.setError("Please type a name");
-            nametxt.requestFocus();
-            return;
-        }
-
-        if (email.isEmpty()) {
-            emailtxt.setError("Please type an email");
-            emailtxt.requestFocus();
-            return;
-        }
-
-        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            emailtxt.setError("");
-            emailtxt.requestFocus();
-            return;
-        }
-
-        if (password.isEmpty()) {
-            passtxt.setError("Please type a password");
-            passtxt.requestFocus();
-            return;
-        }
-
-        if (password.length() < 6) {
-            passtxt.setError("Password is too small,must be more than 6 characters");
-            passtxt.requestFocus();
-            return;
-        }
-
-        if (studentid.isEmpty()) {
-            stidtxt.setError("please enter your Student ID");
-            stidtxt.requestFocus();
-            return;
-        }
-        if (confpassword.isEmpty()) {
-            confpasstxt.setError("Confirm the password");
-            confpasstxt.requestFocus();
-            return;
-        }
+        setupUIViews();
 
 
+        firebaseAuth = FirebaseAuth.getInstance();
+        firebaseStorage = FirebaseStorage.getInstance();
 
-        progressBar.setVisibility(View.VISIBLE);
-        mAuth.createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
+        storageReference = firebaseStorage.getReference();
 
-                        if (task.isSuccessful()) {
+        userProfilePic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent pickImage = new Intent(Intent.ACTION_OPEN_DOCUMENT);
+                pickImage.addCategory(Intent.CATEGORY_OPENABLE);
+                pickImage.setType("image/*");
 
-                            User user = new User(
-                                    name,
-                                    email,
-                                    studentid
-                            );
-
-
-
-
-
-                            FirebaseDatabase.getInstance().getReference("User")
-                                    .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
-                                    .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
-                                @Override
-                                public void onComplete(@NonNull Task<Void> task) {
-                                    progressBar.setVisibility(View.GONE);
-                                    if (task.isSuccessful()) {
-                                        sendEmailVerification();
-                                        Toast.makeText(register.this,"Registration Success", Toast.LENGTH_LONG).show();
-                                        Intent toy = new Intent(register.this,login.class);
-
-                                        startActivity(toy);
-                                    } else {
-                                        //display a failure message
-                                    }
-                                }
-                            });
-
-                        } else {
-                            Toast.makeText(register.this, task.getException().getMessage(), Toast.LENGTH_LONG).show();
-                        }
-                    }
-                });
-    }
-
-
-
-
-
-
-    @Override
-    public void onClick(View view) {
-        if(view == confirmbtn){
-            String checkPass1 = passtxt.getText().toString().trim();
-            String checkPass2 = confpasstxt.getText().toString().trim();
-            if(checkPass1.contentEquals(checkPass2)){
-                registerUser();
-            }else{
-                Toast.makeText(register.this,"Password didn't match",Toast.LENGTH_LONG).show();
+                startActivityForResult(pickImage,PICK_IMAGE);
             }
+        });
 
+
+
+        regButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                sendUserData();
+                Intent toy = new Intent(register.this,MainActivity.class);
+                startActivity(toy);
+
+            }
+        });
+
+
+
+    }
+
+    private void setupUIViews(){
+        userName = (EditText)findViewById(R.id.nametxt);
+        userdept = findViewById(R.id.depttxt);
+        userEmail = findViewById(R.id.emailtxt);
+        userlevel = findViewById(R.id.leveltxt);
+        regButton = findViewById(R.id.savebtn);
+        userid = findViewById(R.id.stidtxt);
+        genderspinner = findViewById(R.id.spinner2);
+        userProfilePic = (ImageView)findViewById(R.id.ivProfile);
+
+
+        if (TextUtils.isEmpty(email)){
+            Toast.makeText(register.this,"enter your email",Toast.LENGTH_SHORT).show();
+        }
+
+        if (TextUtils.isEmpty(level)){
+            Toast.makeText(register.this,"enter your level",Toast.LENGTH_SHORT).show();
+
+
+        }
+
+        if (TextUtils.isEmpty(dept)){
+            Toast.makeText(register.this,"enter your department",Toast.LENGTH_SHORT).show();
+        }
+
+        if (TextUtils.isEmpty(name)){
+            Toast.makeText(register.this,"enter your name",Toast.LENGTH_SHORT).show();
+        }
+
+        if (TextUtils.isEmpty(stid)){
+            Toast.makeText(register.this,"enter your student id",Toast.LENGTH_SHORT).show();
         }
 
     }
 
-    private void sendEmailVerification() {
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        if (user != null) {
-            user.sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
-                @Override
-                public void onComplete(@NonNull Task<Void> task) {
-                    if (task.isSuccessful()) {
-                        Toast.makeText(register.this, "Check your Email for verification", Toast.LENGTH_SHORT).show();
-                        FirebaseAuth.getInstance().signOut();
-                    }
-                    else{
-                        Toast.makeText(register.this,"Email is not correct",Toast.LENGTH_SHORT).show();
-                    }
-                }
-            });
+
+
+
+    private void sendUserData(){
+        name = userName.getText().toString().trim();
+        stid = userid.getText().toString().trim();
+        email = userEmail.getText().toString().trim();
+        level = userlevel.getText().toString().trim();
+        dept = userdept.getText().toString().trim();
+        gender = genderspinner.getSelectedItem().toString();
+
+
+        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = firebaseDatabase.getReference(firebaseAuth.getUid());
+
+        StorageReference imageReference = storageReference.child(firebaseAuth.getUid()).child("Images").child("Profile Pic");  //User id/Images/Profile Pic.jpg
+        UploadTask uploadTask = imageReference.putFile(imagePath);
+        uploadTask.addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(register.this, "Upload failed!", Toast.LENGTH_SHORT).show();
+            }
+        }).addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
+                Toast.makeText(register.this, "Upload successful!", Toast.LENGTH_SHORT).show();
+            }
+        });
+        User userProfile = new User(name,email,stid,dept,level,gender,imagePath.toString());
+        myRef.setValue(userProfile);
+
+        if(myRef.setValue(userProfile).isSuccessful()){
+            Toast.makeText(register.this,"upload success",Toast.LENGTH_SHORT).show();
         }
+
+        else
+        {
+            Toast.makeText(register.this,"not done",Toast.LENGTH_SHORT).show();
+
+        }
+
+
     }
 }

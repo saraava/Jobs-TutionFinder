@@ -6,114 +6,172 @@
     android:layout_height="match_parent"
     tools:context=".register">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="240dp"
-        android:layout_height="32dp"
+    <ImageView
+        android:id="@+id/ivProfile"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="43dp"
-        android:textSize="18dp"
-        android:text="Name" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.163"
+        app:srcCompat="@mipmap/ic_launcher"
+        android:contentDescription="TODO" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/nametxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView2"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="202dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="244dp"
-        android:layout_height="32dp"
-        android:layout_below="@+id/editText"
-        android:textSize="18dp"
-        android:text="Student ID" />
-
-    <EditText
-        android:id="@+id/editText2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView3"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="245dp"
-        android:layout_height="39dp"
-        android:layout_below="@+id/editText2"
-        android:textSize="18dp"
-        android:text="Email ID" />
-
-    <EditText
-        android:id="@+id/editText3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView4"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="" />
-
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="245dp"
-        android:layout_height="37dp"
-        android:layout_below="@+id/editText3"
-        android:textSize="18dp"
-        android:text="Password" />
-
-    <EditText
-        android:id="@+id/editText4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView6"
-        android:ems="10"
-        android:inputType="textPassword"
-        android:text="" />
+        android:text=""
+        android:layout_alignParentRight="true" />
 
     <TextView
         android:id="@+id/textView7"
-        android:layout_width="244dp"
-        android:layout_height="38dp"
-        android:layout_below="@+id/editText4"
+        android:layout_width="168dp"
+        android:layout_height="46dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/nametxt"
+        android:text="Name"
         android:textSize="18dp"
-        android:text="Confirm Password" />
+        android:textStyle="italic"
+        android:textColorHighlight="@color/colorPrimaryDark"
+        android:layout_alignParentLeft="true" />
 
     <EditText
-        android:id="@+id/editText5"
+        android:id="@+id/emailtxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView7"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/nametxt"
         android:ems="10"
-        android:inputType="textPassword"
-        android:text="" />
+        android:inputType="textPersonName"
+        android:text=""
+        android:layout_alignParentRight="true" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="167dp"
+        android:layout_height="45dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/nametxt"
+        android:text="Email"
+        android:textSize="18dp"
+        android:textStyle="italic"
+        android:textColorHighlight="@color/colorPrimaryDark"
+        android:layout_alignParentLeft="true" />
+
+    <EditText
+        android:id="@+id/stidtxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/textView10"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text=""
+        android:layout_alignParentRight="true" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="167dp"
+        android:layout_height="37dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/emailtxt"
+        android:text="Gender"
+        android:textSize="18dp"
+        android:textStyle="italic"
+        android:textColorHighlight="@color/colorPrimaryDark"
+        android:layout_alignParentLeft="true" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="168dp"
+        android:layout_height="46dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/stidtxt"
+        android:text="Student ID"
+        android:textSize="18dp"
+        android:textStyle="italic"
+        android:textColorHighlight="@color/colorPrimaryDark"
+        android:layout_alignParentLeft="true" />
+
+    <EditText
+        android:id="@+id/depttxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/stidtxt"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text=""
+        android:layout_alignParentRight="true" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="167dp"
+        android:layout_height="46dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/stidtxt"
+        android:text="Department"
+        android:textSize="18dp"
+        android:textStyle="italic"
+        android:textColorHighlight="@color/colorPrimaryDark"
+        android:layout_alignParentLeft="true" />
+
+    <EditText
+        android:id="@+id/leveltxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/depttxt"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text=""
+        android:layout_alignParentRight="true" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="167dp"
+        android:layout_height="46dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/depttxt"
+        android:text="Level"
+        android:textSize="18dp"
+        android:textStyle="italic"
+        android:textColorHighlight="@color/colorPrimaryDark"
+        android:layout_alignParentLeft="true" />
 
     <Button
-        android:id="@+id/conf"
+        android:id="@+id/savebtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="12dp"
-        android:text="Confirm"
-        android:textAlignment="center"
-        android:textSize="20dp"
-        android:textStyle="bold" />
-
-    <ProgressBar
-        android:id="@+id/progressBar2"
-        style="?android:attr/progressBarStyle"
-        android:layout_width="64dp"
-        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/textView4"
-        android:layout_marginStart="152dp"
+        android:layout_marginBottom="34dp"
+        android:layout_marginStart="133dp"
+        android:text="Save"
+        android:textSize="18dp"
+        android:textStyle="italic|bold"
+        android:textColorHighlight="@color/colorPrimaryDark"
         android:layout_alignParentLeft="true"
-        android:layout_marginLeft="152dp" />
+        android:layout_marginLeft="133dp" />
 
+    <Spinner
+        android:id="@+id/spinner2"
+        android:layout_width="216dp"
+        android:layout_height="38dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView8"
+        android:layout_marginStart="168dp"
+        android:layout_alignParentLeft="true"
+        android:entries="@array/gender"
+        android:layout_marginLeft="168dp" />
 
 </RelativeLayout>

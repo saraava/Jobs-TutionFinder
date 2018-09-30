@@ -30,7 +30,7 @@ public class welcome extends AppCompatActivity {
         signupbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent toy = new Intent(welcome.this,register.class);
+                Intent toy = new Intent(welcome.this,registersave.class);
 
                 startActivity(toy);
             }

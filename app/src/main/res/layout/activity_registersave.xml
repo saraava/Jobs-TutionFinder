@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".registersave">
+
+    <EditText
+        android:id="@+id/utxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="131dp"
+        android:ems="10"
+        android:defaultFocusHighlightEnabled="true"
+        android:inputType="textPersonName"
+        android:layout_alignParentRight="true" />
+
+    <EditText
+        android:id="@+id/pass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/utxt"
+        android:ems="10"
+        android:inputType="textPassword"
+        tools:ignore="UnknownId"
+        android:defaultFocusHighlightEnabled="true"
+        android:layout_alignParentRight="true" />
+
+    <Button
+        android:id="@+id/reg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="163dp"
+        android:layout_marginStart="137dp"
+        android:textStyle="italic|bold"
+        android:textSize="20dp"
+        android:text="Register"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="137dp" />
+
+    <EditText
+        android:id="@+id/editText4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/pass"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:text=""
+        android:defaultFocusHighlightEnabled="true"
+        android:layout_alignParentRight="true" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="168dp"
+        android:layout_height="44dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/utxt"
+        android:text="Username"
+        android:textSize="18dp"
+        android:textStyle="italic"
+        android:textColorHighlight="@color/colorPrimaryDark"
+        android:layout_alignParentLeft="true" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="166dp"
+        android:layout_height="42dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/utxt"
+        android:text="Password"
+        android:layout_alignParentLeft="true"
+        android:textSize="18dp"
+        android:textStyle="italic"
+        android:textColorHighlight="@color/colorPrimaryDark"/>
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="166dp"
+        android:layout_height="47dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/pass"
+        android:text="Confirm Password"
+        android:textSize="18dp"
+        android:textStyle="italic"
+        android:textColorHighlight="@color/colorPrimaryDark"
+        android:layout_alignParentLeft="true" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="195dp" />
+
+</RelativeLayout>
