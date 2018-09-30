@@ -5,18 +5,82 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".profilefrag">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:textSize="25sp"
-        android:text=""
-        android:id="@+id/tvUserInfo"/>
+    <ImageView
+        android:id="@+id/ivProfilePic"
+        android:layout_width="186dp"
+        android:layout_height="151dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="14dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="96dp" />
 
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/listview"/>
+    <TextView
+        android:id="@+id/textname"
+        android:layout_width="373dp"
+        android:layout_height="38dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="249dp"
+        android:text="Name          :"
+        android:textSize="20dp"
+        android:layout_alignParentLeft="true" />
+
+    <TextView
+        android:id="@+id/textemail"
+        android:layout_width="373dp"
+        android:layout_height="38dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="234dp"
+        android:text="Email              :"
+        android:textSize="18dp" />
+
+    <TextView
+        android:id="@+id/textgender"
+        android:layout_width="371dp"
+        android:layout_height="35dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="190dp"
+        android:text="Gender           :"
+        android:textSize="18dp" />
+
+    <TextView
+        android:id="@+id/textstudentID"
+        android:layout_width="370dp"
+        android:layout_height="38dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="142dp"
+        android:text="Student ID      :"
+        android:textSize="18dp" />
+
+    <TextView
+        android:id="@+id/textdept"
+        android:layout_width="373dp"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="95dp"
+        android:text="Department   :"
+        android:textSize="18dp"
+        android:layout_alignParentLeft="true" />
+
+    <TextView
+        android:id="@+id/textlevel"
+        android:layout_width="373dp"
+        android:layout_height="32dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="54dp"
+        android:text="Level              :"
+        android:textSize="18dp"
+        android:layout_alignParentLeft="true" />
 
 
 </RelativeLayout>
