@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.sara.jobandtutionfinder">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
@@ -36,9 +36,9 @@
         <activity android:name=".updateProfile" />
         <activity android:name=".registersave" />
         <activity android:name=".partfarag_givepost" />
-        <activity android:name=".partfrag_otherspost">
-
-        </activity>
+        <activity android:name=".partfrag_otherspost" />
+        <activity android:name=".FullTimePostPage" />
+        <activity android:name=".FullTimeJob"></activity>
     </application>
 
 </manifest>
