@@ -6,14 +6,11 @@
     tools:context=".partfrag">
 
 
-
     <TextView
-        android:id="@+id/textView13"
+        android:id="@+id/textgivepost"
         android:layout_width="222dp"
         android:layout_height="46dp"
-
         android:layout_alignParentTop="true"
-
         android:layout_centerHorizontal="true"
         android:layout_marginTop="215dp"
         android:text="Give Post"
@@ -22,17 +19,18 @@
         android:textStyle="bold|italic" />
 
     <TextView
-        android:id="@+id/textView16"
+        android:id="@+id/textotherspost"
         android:layout_width="222dp"
         android:layout_height="46dp"
-
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="196dp"
+        android:layout_marginBottom="236dp"
         android:text="Others Post"
         android:textAlignment="center"
         android:textSize="22dp"
         android:textStyle="bold|italic" />
+
+
 
 
 </RelativeLayout>

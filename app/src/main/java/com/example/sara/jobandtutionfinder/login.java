@@ -2,6 +2,8 @@ package com.example.sara.jobandtutionfinder;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -80,6 +82,8 @@ public class login extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
                                 FirebaseUser user = mAuth.getCurrentUser();
+                                SharedPreferences s = PreferenceManager.getDefaultSharedPreferences(login.this);
+                                s.edit().putString("username",email).commit();
                                 Toast.makeText(getApplicationContext(),"Login success",Toast.LENGTH_SHORT).show();
                                 finish();
                                 Intent toy = new Intent(login.this,MainActivity.class);
