@@ -38,7 +38,10 @@
         <activity android:name=".partfarag_givepost" />
         <activity android:name=".partfrag_otherspost" />
         <activity android:name=".FullTimePostPage" />
-        <activity android:name=".FullTimeJob"></activity>
+        <activity android:name=".FullTimeJob" />
+        <activity android:name=".selectCls" />
+        <activity android:name=".bookSelections" />
+        <activity android:name=".showCv"></activity>
     </application>
 
 </manifest>

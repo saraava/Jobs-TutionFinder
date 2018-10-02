@@ -7,42 +7,44 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class bookSelection extends AppCompatActivity {
-private Button pbtn,cbtn,ibtn,gmbtn,hmbtn,bbtn;
+public class bookSelections extends AppCompatActivity {
+
+    private Button pbtn,cbtn,ibtn,gmbtn,hmbtn,bbtn;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_book_selection);
+        setContentView(R.layout.activity_book_selections);
         pbtn=(Button) findViewById(R.id.phybtn);
         cbtn=(Button) findViewById(R.id.chebtn);
-       ibtn=(Button) findViewById(R.id.ictbtn);
+        ibtn=(Button) findViewById(R.id.ictbtn);
         gmbtn=(Button) findViewById(R.id.gmbtn);
         hmbtn=(Button) findViewById(R.id.hmathbtn);
         bbtn=(Button) findViewById(R.id.biobtn);
-       pbtn.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View v) {
-               Intent phybookIntent=new Intent(Intent.ACTION_VIEW, Uri.parse("https://drive.google.com/open?id=1kzANjG8a08_EYJtCKbnW6HlW9p8BjEW6"));
-               startActivity(phybookIntent);
-           }
-       });
+        pbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent phybookIntent=new Intent(Intent.ACTION_VIEW, Uri.parse("https://drive.google.com/open?id=1kzANjG8a08_EYJtCKbnW6HlW9p8BjEW6"));
+                startActivity(phybookIntent);
+            }
+        });
 
-   cbtn.setOnClickListener(new View.OnClickListener() {
-       @Override
-       public void onClick(View v) {
-           Intent chebookIntent=new Intent(Intent.ACTION_VIEW, Uri.parse("https://drive.google.com/open?id=1Z4-qQVcN564VFuPc6g8iF2o4sZIxKBu1"));
-           startActivity(chebookIntent);
-       }
-   });
-       bbtn.setOnClickListener(new View.OnClickListener() {
+        cbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent chebookIntent=new Intent(Intent.ACTION_VIEW, Uri.parse("https://drive.google.com/open?id=1Z4-qQVcN564VFuPc6g8iF2o4sZIxKBu1"));
+                startActivity(chebookIntent);
+            }
+        });
+        bbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent biobookIntent=new Intent(Intent.ACTION_VIEW, Uri.parse("https://drive.google.com/open?id=1M_unb0jVUVhDQ_kTg1bXIeI545sOGj9B"));
                 startActivity(biobookIntent);
             }
         });
-       gmbtn.setOnClickListener(new View.OnClickListener() {
+        gmbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent gmbookIntent=new Intent(Intent.ACTION_VIEW, Uri.parse("https://drive.google.com/open?id=1eHXU-FzreDUsKPDem0mCKCIM4lhtY4VC"));
@@ -66,4 +68,5 @@ private Button pbtn,cbtn,ibtn,gmbtn,hmbtn,bbtn;
 
 
     }
+
 }

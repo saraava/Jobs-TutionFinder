@@ -1,6 +1,7 @@
 package com.example.sara.jobandtutionfinder;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -114,13 +115,15 @@ public class MainActivity extends AppCompatActivity
             Toast.makeText(this,"Home Tutor",Toast.LENGTH_LONG).show();
 
         } else if (id == R.id.nav_cv) {
-            Intent i=new Intent(getApplicationContext(),fullfrag.class);
-            startActivity(i);
-            Toast.makeText(this,"CV",Toast.LENGTH_LONG).show();
+            //Intent i=new Intent(getApplicationContext(),showCv.class);
+            //startActivity(i);
+            Intent cvIntent=new Intent(Intent.ACTION_VIEW, Uri.parse("https://drive.google.com/open?id=1CTV3QwRx7qJph7axzwmdwIta1AXhbzBj"));
+            startActivity(cvIntent);
+          //  Toast.makeText(this,"CV",Toast.LENGTH_LONG).show();
 
         }
         else if (id == R.id.nav_book) {
-                Intent i=new Intent(getApplicationContext(),bookSelection.class);
+                Intent i=new Intent(getApplicationContext(),selectCls.class);
                 startActivity(i);
                 Toast.makeText(this,"Book",Toast.LENGTH_LONG).show();
 
