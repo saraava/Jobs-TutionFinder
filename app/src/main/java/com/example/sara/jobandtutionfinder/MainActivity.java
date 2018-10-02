@@ -120,7 +120,7 @@ public class MainActivity extends AppCompatActivity
 
         }
         else if (id == R.id.nav_book) {
-                Intent i=new Intent(getApplicationContext(),fullfrag.class);
+                Intent i=new Intent(getApplicationContext(),bookSelection.class);
                 startActivity(i);
                 Toast.makeText(this,"Book",Toast.LENGTH_LONG).show();
 
