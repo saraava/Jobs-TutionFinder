@@ -4,8 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#add7ad"
     tools:context=".login"
-    android:layout_marginLeft="30dp">
+   >
 
     <TextView
         android:id="@+id/usernametxt"
@@ -14,7 +15,9 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="82dp"
+        android:layout_marginLeft="30dp"
         android:text="Email ID"
+        android:textColor="#040503"
         android:textSize="18dp"
         android:layout_alignParentLeft="true" />
 
@@ -22,9 +25,11 @@
         android:id="@+id/editText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="131dp"
+        android:textColor="#040503"
         android:ems="10"
         android:inputType="textPersonName"
         android:text=""
@@ -35,6 +40,8 @@
         android:id="@+id/password"
         android:layout_width="115dp"
         android:layout_height="30dp"
+        android:layout_marginLeft="30dp"
+        android:textColor="#040503"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="195dp"
@@ -46,6 +53,8 @@
         android:id="@+id/passwordtxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:textColor="#040503"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="242dp"
@@ -65,6 +74,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="145dp"
         android:textSize="18dp"
+        android:textColor="#040503"
+        android:background="#6aa66a"
         android:textStyle="bold"
         android:text="Login"
         />
@@ -77,16 +88,20 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="110dp"
         android:text="If you don't have an account,register now"
+        android:textColor="#040503"
         android:textSize="20dp" />
 
     <Button
         android:id="@+id/register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="53dp"
         android:textSize="18dp"
+        android:textColor="#040503"
+        android:background="#6aa66a"
         android:textStyle="bold"
         android:text="Register" />
 

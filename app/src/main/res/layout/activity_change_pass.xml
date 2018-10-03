@@ -4,25 +4,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#add7ad"
+
     tools:context=".changePass">
 
     <TextView
         android:id="@+id/textView11"
         android:layout_width="167dp"
         android:layout_height="44dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="102dp"
+        android:layout_marginLeft="20dp"
+        android:layout_alignTop="@+id/editText8"
         android:text="New Password"
-        android:textSize="18dp"
-        android:layout_alignParentLeft="true" />
+        android:textColor="#040503"
+        android:textSize="18dp" />
 
     <EditText
         android:id="@+id/editText8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
-        android:layout_alignTop="@+id/textView11"
+        android:textColor="#040503"
+        android:layout_marginTop="190dp"
+        android:layout_marginBottom="25dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text=""
@@ -33,32 +36,35 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="161dp"
+        android:layout_centerVertical="true"
         android:ems="10"
         android:inputType="textPersonName"
         android:text=""
+        android:textColor="#040503"
         android:layout_alignParentRight="true" />
 
     <TextView
         android:id="@+id/textView14"
         android:layout_width="170dp"
         android:layout_height="46dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignTop="@+id/editText9"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="25dp"
+        android:layout_centerVertical="true"
         android:text="Confirm Password"
-        android:textSize="18dp"
-        android:layout_alignParentLeft="true" />
+        android:textColor="#040503"
+        android:textSize="18dp" />
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="245dp"
+        android:layout_height="45dp"
+        android:textColor="#040503"
+        android:background="#6aa66a"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="216dp"
-        android:layout_marginStart="136dp"
+        android:layout_marginLeft="110dp"
+        android:gravity="center"
         android:text="Change"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="136dp" />
+        android:textSize="22sp"
+        android:layout_alignParentLeft="true" />
 </RelativeLayout>

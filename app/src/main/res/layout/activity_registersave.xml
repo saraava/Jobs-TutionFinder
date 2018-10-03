@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#add7ad"
     tools:context=".registersave">
 
     <EditText
@@ -14,6 +15,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginTop="131dp"
         android:ems="10"
+        android:textColor="#040503"
         android:defaultFocusHighlightEnabled="true"
         android:inputType="textPersonName"
         android:layout_alignParentRight="true" />
@@ -25,6 +27,7 @@
         android:layout_alignParentEnd="true"
         android:layout_below="@+id/utxt"
         android:ems="10"
+        android:textColor="#040503"
         android:inputType="textPassword"
         tools:ignore="UnknownId"
         android:defaultFocusHighlightEnabled="true"
@@ -32,17 +35,16 @@
 
     <Button
         android:id="@+id/reg"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="246dp"
+        android:layout_height="45dp"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="163dp"
-        android:layout_marginStart="137dp"
-        android:textStyle="italic|bold"
-        android:textSize="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="145dp"
+        android:background="#6aa66a"
         android:text="Register"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="137dp" />
+        android:textColor="#040503"
+        android:textSize="20dp"
+        android:textStyle="italic|bold" />
 
     <EditText
         android:id="@+id/editText4"
@@ -51,6 +53,7 @@
         android:layout_alignParentEnd="true"
         android:layout_below="@+id/pass"
         android:ems="10"
+        android:textColor="#040503"
         android:inputType="textPassword"
         android:text=""
         android:defaultFocusHighlightEnabled="true"
@@ -60,9 +63,11 @@
         android:id="@+id/textView3"
         android:layout_width="168dp"
         android:layout_height="44dp"
+        android:layout_marginLeft="12dp"
         android:layout_alignParentStart="true"
         android:layout_alignTop="@+id/utxt"
         android:text="Username"
+        android:textColor="#040503"
         android:textSize="18dp"
         android:textStyle="italic"
         android:textColorHighlight="@color/colorPrimaryDark"
@@ -72,9 +77,11 @@
         android:id="@+id/textView4"
         android:layout_width="166dp"
         android:layout_height="42dp"
+        android:layout_marginLeft="12dp"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/utxt"
         android:text="Password"
+        android:textColor="#040503"
         android:layout_alignParentLeft="true"
         android:textSize="18dp"
         android:textStyle="italic"
@@ -84,6 +91,8 @@
         android:id="@+id/textView6"
         android:layout_width="166dp"
         android:layout_height="47dp"
+        android:layout_marginLeft="12dp"
+        android:textColor="#040503"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/pass"
         android:text="Confirm Password"

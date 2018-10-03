@@ -1,79 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#add7ad"
     tools:context=".bookSelections">
-    <Button
-        android:id="@+id/phybtn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="82dp"
-        android:text="Physics"
-        android:textSize="22dp"
-        android:textStyle="bold|italic" />
 
-    <Button
-        android:id="@+id/chebtn"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="152dp"
-        android:text="Chemistry"
-        android:textSize="22dp"
-        android:textStyle="bold|italic"
-        android:layout_alignParentLeft="true"/>
+        android:layout_height="462dp"
+        android:layout_marginTop="100dp"
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/hmathbtn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_marginBottom="120dp"
-        android:text="Higher Math"
-        android:textSize="22dp"
-        android:textStyle="bold|italic" />
 
-    <Button
-        android:id="@+id/gmbtn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_marginBottom="185dp"
-        android:text="General Math"
-        android:textSize="22dp"
-        android:textStyle="bold|italic" />
+        <Button
+            android:id="@+id/phybtn"
+            android:layout_width="256dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="25dp"
+            android:layout_marginLeft="4dp"
+            android:textColor="#040503"
+            android:background="#6aa66a"
+            android:text="Physics"
+            android:textSize="22dp"
+            android:textStyle="bold|italic" />
 
-    <Button
-        android:id="@+id/biobtn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="224dp"
-        android:text="Biology"
-        android:textSize="22dp"
-        android:textStyle="bold|italic" />
+        <Button
+            android:id="@+id/chebtn"
+            android:layout_width="256dp"
+            android:layout_height="45dp"
+            android:textColor="#040503"
+            android:background="#6aa66a"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="25dp"
+            android:layout_marginLeft="4dp"
+            android:text="Chemistry"
+            android:textSize="22dp"
+            android:textStyle="bold|italic" />
 
-    <Button
-        android:id="@+id/ictbtn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_marginBottom="59dp"
-        android:text="ICT"
-        android:textSize="22dp"
-        android:textStyle="bold|italic" />
-</RelativeLayout>
+        <Button
+            android:id="@+id/hmathbtn"
+            android:layout_width="256dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="25dp"
+            android:layout_marginLeft="4dp"
+            android:textColor="#040503"
+            android:background="#6aa66a"
+            android:text="Higher Math"
+            android:textSize="22dp"
+            android:textStyle="bold|italic" />
+        <Button
+            android:id="@+id/gmbtn"
+            android:layout_width="256dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="25dp"
+            android:layout_marginLeft="4dp"
+            android:textColor="#040503"
+            android:background="#6aa66a"
+            android:text="General Math"
+            android:textSize="22dp"
+            android:textStyle="bold|italic" />
+        <Button
+            android:id="@+id/biobtn"
+            android:layout_width="256dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="25dp"
+            android:layout_marginLeft="4dp"
+            android:textColor="#040503"
+            android:background="#6aa66a"
+            android:text="Biology"
+            android:textSize="22dp"
+            android:textStyle="bold|italic" />
+        <Button
+            android:id="@+id/ictbtn"
+            android:layout_width="256dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="25dp"
+            android:layout_marginLeft="4dp"
+            android:textColor="#040503"
+            android:background="#6aa66a"
+            android:text="ICT"
+            android:textSize="22dp"
+            android:textStyle="bold|italic" />
+
+
+
+    </LinearLayout>
+
+</LinearLayout>

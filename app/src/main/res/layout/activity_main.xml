@@ -6,59 +6,77 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/drawer_layout"
     android:fitsSystemWindows="true"
+    android:background="#add7ad"
     tools:openDrawer="start">
 
-    <RelativeLayout
+    <LinearLayout
 
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="#add7ad">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="70dp"
+            >
 
-        <TextView
-            android:id="@+id/textView9"
-            android:layout_width="246dp"
-            android:layout_height="33dp"
-            android:layout_above="@+id/button6"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginBottom="-156dp"
-            android:text="Notifications"
-            android:textSize="22sp"/>
+            <ImageView
+                android:layout_width="101dp"
+                android:layout_height="38dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="100dp"
+                app:srcCompat="@drawable/noti" />
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="245dp"
+                android:layout_height="45dp"
+                android:layout_marginBottom="25dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="100dp"
+                android:text="Notifications"
+                android:textSize="22sp" />
+
+
+        </LinearLayout>
+
 
         <Button
             android:id="@+id/button6"
-            android:layout_width="250dp"
+            android:layout_width="245dp"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentTop="true"
             android:layout_gravity="left"
-            android:layout_marginTop="179dp"
-            android:text="JOBS" />
+            android:layout_marginBottom="25dp"
+            android:layout_marginLeft="75dp"
+            android:background="#6aa66a"
+            android:text="JOBS"
+            android:textColor="#040503" />
 
         <Button
             android:id="@+id/button7"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentTop="true"
-            android:layout_gravity="left"
-            android:layout_marginTop="236dp"
+            android:layout_width="245dp"
+            android:layout_height="45dp"
+            android:layout_marginLeft="75dp"
+            android:layout_marginBottom="25dp"
+            android:background="#6aa66a"
+            android:textColor="#040503"
             android:text="TUTIONS"
             tools:ignore="RtlCompat" />
 
         <Button
             android:id="@+id/button8"
-            android:layout_width="249dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentEnd="true"
-            android:layout_gravity="left"
-            android:layout_marginBottom="218dp"
+            android:layout_width="245dp"
+            android:layout_height="45dp"
+            android:layout_marginLeft="75dp"
+            android:background="#6aa66a"
+            android:textColor="#040503"
             android:text="PROFILE" />
 
 
 
-    </RelativeLayout>
+    </LinearLayout>
 
     <include
         layout="@layout/app_bar_main"
@@ -73,6 +91,8 @@
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/nav_header_main"
-        app:menu="@menu/activity_main_drawer" />
+        app:menu="@menu/activity_main_drawer" >
+
+    </android.support.design.widget.NavigationView>
 
 </android.support.v4.widget.DrawerLayout>

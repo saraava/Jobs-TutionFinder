@@ -1,25 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#add7ad"
+    >
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
 
+</LinearLayout>
     <Button
         android:id="@+id/chng_pass"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="256dp"
+        android:layout_height="45dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginBottom="25dp"
+        android:background="#6aa66a"
+        android:textColor="#040503"
         android:layout_alignParentTop="true"
         android:layout_alignStart="@+id/update_profile"
         android:layout_marginTop="200dp"
         android:text="Change password"
         android:textSize="22sp"
-        android:layout_alignLeft="@+id/update_profile" />
+        android:layout_alignLeft="@+id/update_profile"
+        />
 
     <Button
         android:id="@+id/update_profile"
-        android:layout_width="236dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginBottom="172dp"
+        android:layout_width="256dp"
+        android:layout_height="45dp"
+        android:layout_marginBottom="25dp"
+        android:layout_marginLeft="60dp"
+        android:textColor="#040503"
+        android:background="#6aa66a"
         android:text="Update profile"
         android:textSize="22sp" />
-</RelativeLayout>
+</LinearLayout>

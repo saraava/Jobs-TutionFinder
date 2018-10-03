@@ -1,19 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#add7ad"
     tools:context=".selectCls">
 
 
     <Button
         android:id="@+id/btncls9"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
+        android:layout_width="246dp"
+        android:layout_height="45dp"
+        android:layout_marginLeft="65dp"
+        android:layout_marginBottom="25dp"
+        android:textColor="#040503"
+        android:background="#6aa66a"
         android:layout_gravity="center_vertical"
         android:layout_marginTop="188dp"
         android:text="Class 9_10"
@@ -22,12 +25,13 @@
 
     <Button
         android:id="@+id/btncls11"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="207dp"
+        android:layout_width="246dp"
+        android:layout_height="45dp"
+        android:layout_marginLeft="65dp"
+        android:layout_marginBottom="25dp"
+        android:textColor="#040503"
+        android:background="#6aa66a"
         android:text="Class 11_12"
         android:textSize="22dp"
         android:textStyle="bold|italic" />
-</RelativeLayout>
+</LinearLayout>
