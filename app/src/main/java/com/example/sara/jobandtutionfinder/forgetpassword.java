@@ -16,7 +16,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class forgetpassword extends AppCompatActivity {
 
     private EditText passwordEmail;
-    private Button resetPassword;
+    private Button resetPasswordd;
     private FirebaseAuth firebaseAuth;
 
     @Override
@@ -24,11 +24,11 @@ public class forgetpassword extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forgetpassword);
 
-        passwordEmail = (EditText)findViewById(R.id.etPasswordEmail);
-        resetPassword = (Button)findViewById(R.id.btnPasswordReset);
+        passwordEmail = (EditText)findViewById(R.id.etPasswordEmaill);
+        resetPasswordd = (Button)findViewById(R.id.btnPasswordReset);
         firebaseAuth = FirebaseAuth.getInstance();
 
-        resetPassword.setOnClickListener(new View.OnClickListener() {
+        resetPasswordd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String useremail = passwordEmail.getText().toString().trim();
