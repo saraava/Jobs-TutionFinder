@@ -21,11 +21,11 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class registersave extends AppCompatActivity {
 
-    EditText sname,spass,confpass;
+    EditText sname, spass, confpass;
     Button save;
     FirebaseAuth mAuth;
     ProgressDialog progressDialog;
-    String password,email;
+    String password, email;
     ProgressBar progressBar;
     Context context;
 
@@ -51,52 +51,72 @@ public class registersave extends AppCompatActivity {
 
                 String checkPass1 = spass.getText().toString().trim();
                 String checkPass2 = confpass.getText().toString().trim();
-                if(checkPass1.contentEquals(checkPass2)){
+                if (checkPass1.contentEquals(checkPass2)) {
                     sign_in();
-                }else{
-                    AppConstant.showAlertMessage(context,"Password didn't match");
+
+                } else {
+                    AppConstant.showAlertMessage(context, "Password didn't match");
                     return;
 
                 }
             }
         });
 
+
     }
 
-    void sign_in(){
+    private void sendEmailVerification() {
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user!=null){
+            user.sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
+                public void onComplete(@NonNull Task<Void> task) {
+                    if (task.isSuccessful()){
+                        Toast.makeText(registersave.this,"Check your Email for verification",Toast.LENGTH_SHORT).show();
+                        FirebaseAuth.getInstance().signOut();
+                    }
+                }
+            });
+        }
+    }
+
+
+
+    void sign_in() {
 
         email = sname.getText().toString().trim();
         password = spass.getText().toString().trim();
 
         //validation
-        if (TextUtils.isEmpty(email)){
-            AppConstant.showAlertMessage(context,"Enter an Email");
+        if (TextUtils.isEmpty(email)) {
+            //AppConstant.showAlertMessage(context, "Enter an Email");
             return;
         }
 
-        if (TextUtils.isEmpty(password)){
-            AppConstant.showAlertMessage(context,"Enter Password");
+        if (TextUtils.isEmpty(password)) {
+            AppConstant.showAlertMessage(context, "Enter Password");
             return;
 
         }
 
-        if (password.length() <= 6){
-            AppConstant.showAlertMessage(context,"Password legnth should be more than 6 characters");
+        if (password.length() <= 6) {
+            AppConstant.showAlertMessage(context, "Password legnth should be more than 6 characters");
             return;
         }
 
 
         progressBar.setVisibility(View.VISIBLE);
 
+
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            //sendEmailVerification();
 
-                            Toast.makeText(registersave.this,"Registration successfull",Toast.LENGTH_SHORT).show();
-                            Intent toy = new Intent(registersave.this,register.class);
+
+                            Toast.makeText(registersave.this, "Registration successfull", Toast.LENGTH_SHORT).show();
+                            Intent toy = new Intent(registersave.this, register.class);
                             startActivity(toy);
 
                         } else {
@@ -111,10 +131,10 @@ public class registersave extends AppCompatActivity {
                 });
 
 
-
-
     }
 
 
-
 }
+
+
+

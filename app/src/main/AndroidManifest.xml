@@ -41,7 +41,8 @@
         <activity android:name=".FullTimeJob" />
         <activity android:name=".selectCls" />
         <activity android:name=".bookSelections" />
-        <activity android:name=".showCv"></activity>
+        <activity android:name=".showCv" />
+        <activity android:name=".forgetpassword"></activity>
     </application>
 
 </manifest>

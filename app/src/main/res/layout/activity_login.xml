@@ -80,29 +80,40 @@
         android:text="Login"
         />
 
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="33dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="110dp"
-        android:text="If you don't have an account,register now"
-        android:textColor="#040503"
-        android:textSize="20dp" />
-
     <Button
         android:id="@+id/register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="13dp"
+        android:background="#6aa66a"
+        android:text="Register"
+        android:textColor="#040503"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="13dp" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="255dp"
+        android:layout_height="33dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="4dp"
+        android:text="Don't have any account???"
+        android:textSize="18dp"/>
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="167dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="53dp"
-        android:textSize="18dp"
-        android:textColor="#040503"
-        android:background="#6aa66a"
-        android:textStyle="bold"
-        android:text="Register" />
+        android:layout_marginBottom="101dp"
+        android:text="Forget Password??"
+        android:textSize="18dp" />
 
 </RelativeLayout>

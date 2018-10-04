@@ -176,7 +176,7 @@ public class register extends AppCompatActivity{
 
         else
         {
-            Toast.makeText(register.this,"not done",Toast.LENGTH_SHORT).show();
+            Toast.makeText(register.this,"registration done",Toast.LENGTH_SHORT).show();
 
         }
 
