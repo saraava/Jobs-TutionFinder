@@ -37,18 +37,19 @@ import java.io.IOException;
 
 public class updateProfile extends AppCompatActivity {
 
-    private EditText userName,userlevel,userdept, userEmail, userid;
+    EditText userName,userlevel,userdept, userEmail, userid;
     Spinner genderspinner;
-    private Button regButton;
-    private FirebaseAuth firebaseAuth;
-    private ImageView userProfilePic;
+    Button updatebtn;
+    FirebaseAuth firebaseAuth;
+    ImageView userProfilePic;
     String email, name,dept,level,gender,stid;
     private static int PICK_IMAGE = 123;
     Uri imagePath;
     FirebaseStorage firebaseStorage;
     StorageReference storageReference;
-    private FirebaseDatabase firebaseDatabase;
+    FirebaseDatabase firebaseDatabase;
     Context context;
+    String currentid;
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -71,26 +72,102 @@ public class updateProfile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_updateprofile);
 
-        setContentView(R.layout.activity_profile);
+        //setContentView(R.layout.activity_profile);
 
         context = this;
 
         userName = (EditText)findViewById(R.id.nametxt);
         userdept = findViewById(R.id.depttxt);
-        userEmail = findViewById(R.id.emailtxt);
         userlevel = findViewById(R.id.leveltxt);
-        regButton = findViewById(R.id.savebtn);
+        updatebtn = findViewById(R.id.savebtn);
         userid = findViewById(R.id.stidtxt);
-       // genderspinner = findViewById(R.id.spinner2);
         userProfilePic = (ImageView)findViewById(R.id.ivProfile);
+
+        userProfilePic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent pickImage = new Intent(Intent.ACTION_OPEN_DOCUMENT);
+                pickImage.addCategory(Intent.CATEGORY_OPENABLE);
+                pickImage.setType("image/*");
+
+                startActivityForResult(pickImage,PICK_IMAGE);
+            }
+        });
+
 
 
         firebaseAuth = FirebaseAuth.getInstance();
-        firebaseDatabase = FirebaseDatabase.getInstance();
         firebaseStorage = FirebaseStorage.getInstance();
 
-        final DatabaseReference databaseReference = firebaseDatabase.getReference(firebaseAuth.getUid());
+        storageReference = firebaseStorage.getReference();
 
+
+
+
+
+        updatebtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                updatepro();
+            }
+        });
+
+
+
+
+
+    }
+
+    void updatepro() {
+
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = firebaseDatabase.getReference("User").child(firebaseAuth.getUid());
+
+        StorageReference imageReference = storageReference.child(firebaseAuth.getUid()).child("Images").child("Profile Pic");
+        UploadTask uploadTask = imageReference.putFile(imagePath);
+        uploadTask.addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(updateProfile.this, "Upload failed!", Toast.LENGTH_SHORT).show();
+            }
+        }).addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
+                Toast.makeText(updateProfile.this, "Upload successful!", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        myRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                User userPro = dataSnapshot.getValue(User.class);
+                gender = userPro.getGender();
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+
+
+
+
+        name = userName.getText().toString().trim();
+        dept = userdept.getText().toString().trim();
+        stid = userid.getText().toString().trim();
+        level = userlevel.getText().toString().trim();
+
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        email = user.getEmail();
+
+
+
+
+        User userProfile = new User(name,email,stid,dept,level,gender,imagePath.toString());
+        myRef.setValue(userProfile);
 
 
     }

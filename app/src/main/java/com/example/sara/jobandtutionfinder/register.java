@@ -34,7 +34,7 @@ import java.io.IOException;
 
 public class register extends AppCompatActivity{
 
-    private EditText userName,userlevel,userdept, userEmail, userid;
+    private EditText userName,userlevel,userdept, userid;
     Spinner genderspinner;
     private Button regButton;
     private FirebaseAuth firebaseAuth;
@@ -92,7 +92,6 @@ public class register extends AppCompatActivity{
         regButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 sendUserData();
                 Intent toy = new Intent(register.this,MainActivity.class);
                 startActivity(toy);
@@ -107,17 +106,15 @@ public class register extends AppCompatActivity{
     private void setupUIViews(){
         userName = (EditText)findViewById(R.id.nametxt);
         userdept = findViewById(R.id.depttxt);
-        userEmail = findViewById(R.id.emailtxt);
         userlevel = findViewById(R.id.leveltxt);
-        regButton = findViewById(R.id.savebtn);
+        regButton = findViewById(R.id.savebtnn);
         userid = findViewById(R.id.stidtxt);
-        genderspinner = findViewById(R.id.spinner2);
+        genderspinner = findViewById(R.id.spinner);
         userProfilePic = (ImageView)findViewById(R.id.ivProfile);
 
 
-        if (TextUtils.isEmpty(email)){
-            Toast.makeText(register.this,"enter your email",Toast.LENGTH_SHORT).show();
-        }
+
+
 
         if (TextUtils.isEmpty(level)){
             Toast.makeText(register.this,"enter your level",Toast.LENGTH_SHORT).show();
@@ -145,14 +142,15 @@ public class register extends AppCompatActivity{
     private void sendUserData(){
         name = userName.getText().toString().trim();
         stid = userid.getText().toString().trim();
-        email = userEmail.getText().toString().trim();
         level = userlevel.getText().toString().trim();
         dept = userdept.getText().toString().trim();
         gender = genderspinner.getSelectedItem().toString();
 
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        email = user.getEmail();
 
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = firebaseDatabase.getReference(firebaseAuth.getUid());
+        DatabaseReference myRef = firebaseDatabase.getReference("User").child(firebaseAuth.getUid());
 
         StorageReference imageReference = storageReference.child(firebaseAuth.getUid()).child("Images").child("Profile Pic");  //User id/Images/Profile Pic.jpg
         UploadTask uploadTask = imageReference.putFile(imagePath);

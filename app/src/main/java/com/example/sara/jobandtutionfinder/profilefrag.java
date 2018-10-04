@@ -57,7 +57,7 @@ public class profilefrag extends AppCompatActivity{
         firebaseDatabase = FirebaseDatabase.getInstance();
         firebaseStorage = FirebaseStorage.getInstance();
 
-        DatabaseReference databaseReference = firebaseDatabase.getReference(firebaseAuth.getUid());
+        DatabaseReference databaseReference = firebaseDatabase.getReference("User").child(firebaseAuth.getUid());
 
         StorageReference storageReference = firebaseStorage.getReference();
 
@@ -83,7 +83,7 @@ public class profilefrag extends AppCompatActivity{
             public void onDataChange(DataSnapshot dataSnapshot) {
                 User userProfile = dataSnapshot.getValue(User.class);
                 profileName.setText("Name          :" + userProfile.getName());
-                profileEmail.setText("Email              :"+userProfile.getEmail());
+                profileEmail.setText("Email          :"+userProfile.getEmailid());
                 profilegender.setText("Gender           :"+userProfile.getGender());
                 profilestid.setText("Student ID      :"+userProfile.getStudentid());
                 profiledept.setText("Department   :"+userProfile.getDept());

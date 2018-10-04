@@ -1,7 +1,7 @@
 package com.example.sara.jobandtutionfinder;
 
 public class User {
-    public String name, email, studentid,dept,gender,level,imageUrl;
+    public String name,emailid, studentid,dept,gender,level,imageUrl;
 
     public String getDept() {
         return dept;
@@ -39,23 +39,6 @@ public class User {
         this.name = name;
     }
 
-    public User(String name, String email, String studentid, String dept, String gender, String level, String imageUrl) {
-        this.name = name;
-        this.email = email;
-        this.studentid = studentid;
-        this.dept = dept;
-        this.gender = gender;
-        this.level = level;
-        this.imageUrl = imageUrl;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
 
     public String getStudentid() {
         return studentid;
@@ -65,13 +48,29 @@ public class User {
         this.studentid = studentid;
     }
 
+    public String getEmailid() {
+        return emailid;
+    }
 
+    public void setEmailid(String emailid) {
+        this.emailid = emailid;
+    }
 
     public String getImageUrl() {
         return imageUrl;
     }
 
     public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
+    public User(String name, String emailid, String studentid, String dept, String gender, String level, String imageUrl) {
+        this.name = name;
+        this.emailid = emailid;
+        this.studentid = studentid;
+        this.dept = dept;
+        this.gender = gender;
+        this.level = level;
         this.imageUrl = imageUrl;
     }
 }
