@@ -42,7 +42,10 @@
         <activity android:name=".selectCls" />
         <activity android:name=".bookSelections" />
         <activity android:name=".showCv" />
-        <activity android:name=".forgetpassword"></activity>
+        <activity android:name=".forgetpassword" />
+        <activity android:name=".Coach" />
+        <activity android:name=".CoachPostPage" />
+        <activity android:name=".CoachJob"></activity>
     </application>
 
 </manifest>

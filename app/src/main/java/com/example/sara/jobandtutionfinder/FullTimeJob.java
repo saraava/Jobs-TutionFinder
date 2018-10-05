@@ -17,7 +17,7 @@ import java.util.List;
 
 public class FullTimeJob extends AppCompatActivity {
 
-    private TextView t1,t2,t3,t4;
+
     private ListView listV;
     List<PostInformation1> l = new ArrayList<>();
 

@@ -18,7 +18,7 @@ import java.util.Calendar;
 public class FullTimePostPage extends AppCompatActivity {
     private EditText f1;
     private Button fbutton;
-    DatabaseReference databaseReference;
+    private DatabaseReference databaseReference;
     FirebaseAuth mAuth;
     private String se1,saveCurrentDate, saveCurrentTime,current_user_id;
 
