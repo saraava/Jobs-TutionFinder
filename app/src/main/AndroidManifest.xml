@@ -45,7 +45,10 @@
         <activity android:name=".forgetpassword" />
         <activity android:name=".Coach" />
         <activity android:name=".CoachPostPage" />
-        <activity android:name=".CoachJob"></activity>
+        <activity android:name=".CoachJob" />
+        <activity android:name=".HomeTeach" />
+        <activity android:name=".HomePostPage" />
+        <activity android:name=".HomeJob"></activity>
     </application>
 
 </manifest>

@@ -5,32 +5,42 @@
     xmlns:toools="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".fullfrag"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="#add7ad">
 
 
 
     <Button
         android:id="@+id/fulltime_post_button"
-        android:layout_alignParentTop="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="215dp"
+        android:layout_width="245dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="190dp"
+        android:layout_marginBottom="25dp"
+        android:layout_marginLeft="75dp"
+        android:textColor="#040503"
+        android:background="#6aa66a"
+
         android:text="Give Post"
         android:textAlignment="center"
-        android:textSize="22dp"
-        android:textStyle="bold|italic"/>
+        android:textStyle="bold|italic"
+        android:textSize="22dp"/>
+
     <Button
         android:id="@+id/fulltime_others_button"
+        android:layout_width="245dp"
+        android:layout_height="45dp"
         android:layout_alignParentBottom="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="196dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="228dp"
+        android:layout_marginEnd="55dp"
+        android:background="#6aa66a"
         android:text="Others Post"
         android:textAlignment="center"
+        android:textColor="#040503"
         android:textSize="22dp"
-        android:textStyle="bold|italic"/>
+        android:layout_marginRight="55dp"
+        android:textStyle="bold|italic" />
 
 
 
