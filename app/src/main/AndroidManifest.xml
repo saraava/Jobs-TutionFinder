@@ -46,9 +46,9 @@
         <activity android:name=".Coachx" />
         <activity android:name=".CoachxPostPage" />
         <activity android:name=".CoachxJob" />
-        <activity android:name=".HomeTeachx" />
-        <activity android:name=".HomexPostPage" />
-        <activity android:name=".HomexJob"></activity>
+        <activity android:name=".Homex" />
+        <activity android:name=".Homexpost" />
+        <activity android:name=".HomexJob2"></activity>
     </application>
 
 </manifest>
