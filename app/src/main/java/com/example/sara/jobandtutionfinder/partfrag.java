@@ -17,13 +17,13 @@ public class partfrag extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_part);
 
-        givepost = findViewById(R.id.textgivepost);
-        otherspost = findViewById(R.id.textotherspost);
+        givepost = findViewById(R.id.p1);
+        otherspost = findViewById(R.id.p2);
 
         givepost.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent toy = new Intent(partfrag.this,partfarag_givepost.class);
+                Intent toy = new Intent(partfrag.this,PartPost.class);
                 startActivity(toy);
             }
         });
@@ -31,7 +31,7 @@ public class partfrag extends AppCompatActivity{
         otherspost.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent toy1 = new Intent(partfrag.this,partfrag_otherspost.class);
+                Intent toy1 = new Intent(partfrag.this,PartJob.class);
                 startActivity(toy1);
 
             }
