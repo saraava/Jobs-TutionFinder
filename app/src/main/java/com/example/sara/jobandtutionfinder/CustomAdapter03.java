@@ -9,12 +9,12 @@ import android.widget.TextView;
 
 import java.util.List;
 
-public class CustomAdapter2 extends BaseAdapter {
-    List<PostInformation2> stuinfo;
+public class CustomAdapter03 extends BaseAdapter {
+    List<PostInformation3> stuinfo;
     Context context;
     private LayoutInflater inflater;
 
-    public CustomAdapter2(Context c,List l) {
+    public CustomAdapter03(Context c,List l) {
         this.context=c;
         this.stuinfo = l;
     }
@@ -38,7 +38,7 @@ public class CustomAdapter2 extends BaseAdapter {
     public View getView(int i, View view, ViewGroup viewGroup) {
         if(view==null){
             inflater=(LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            view=inflater.inflate(R.layout.sample3,viewGroup,false);
+            view=inflater.inflate(R.layout.sample03,viewGroup,false);
 
         }
 

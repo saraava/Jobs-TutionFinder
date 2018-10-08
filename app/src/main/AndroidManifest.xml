@@ -43,12 +43,12 @@
         <activity android:name=".bookSelections" />
         <activity android:name=".showCv" />
         <activity android:name=".forgetpassword" />
-        <activity android:name=".Coach" />
-        <activity android:name=".CoachPostPage" />
-        <activity android:name=".CoachJob" />
         <activity android:name=".HomeTeach" />
         <activity android:name=".HomePostPage" />
-        <activity android:name=".HomeJob"></activity>
+        <activity android:name=".HomeJob" />
+        <activity android:name=".Coachx" />
+        <activity android:name=".CoachxPostPage" />
+        <activity android:name=".CoachxJob"></activity>
     </application>
 
 </manifest>

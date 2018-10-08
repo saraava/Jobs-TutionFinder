@@ -14,15 +14,13 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CoachJob extends AppCompatActivity {
-
+public class CoachxJob extends AppCompatActivity {
     private ListView listV;
-    List<PostInformation2> l = new ArrayList<>();
-
+    List<PostInformation3> l = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_coach_job);
+        setContentView(R.layout.activity_coachx_job);
 
         listV=findViewById(R.id.list2);
 
@@ -31,9 +29,9 @@ public class CoachJob extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for(DataSnapshot i:dataSnapshot.getChildren()){
-                    l.add(i.getValue(PostInformation2.class));
+                    l.add(i.getValue(PostInformation3.class));
                 }
-                CustomAdapter2 c=new CustomAdapter2(CoachJob.this,l);
+                CustomAdapter03 c=new CustomAdapter03(CoachxJob.this,l);
                 listV.setAdapter(c);
 
             }

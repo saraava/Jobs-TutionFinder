@@ -1,15 +1,14 @@
 package com.example.sara.jobandtutionfinder;
 
-public class PostInformation2 {
-
+public class PostInformation3 {
     String cpost,username,cdate;
 
-    public PostInformation2(String cpost, String username, String cdate) {
+    public PostInformation3(String cpost, String username, String cdate) {
         this.cpost = cpost;
         this.username = username;
         this.cdate = cdate;
     }
-    public PostInformation2(){
+    public PostInformation3(){
 
     }
 

@@ -15,7 +15,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-public class CoachPostPage extends AppCompatActivity {
+public class CoachxPostPage extends AppCompatActivity {
 
     private EditText f1;
     private Button fbutton;
@@ -26,7 +26,7 @@ public class CoachPostPage extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_coach_post_page);
+        setContentView(R.layout.activity_coachx_post_page);
 
         f1=(EditText) findViewById(R.id.cp1);
         fbutton=(Button) findViewById(R.id.cb1);
@@ -65,7 +65,7 @@ public class CoachPostPage extends AppCompatActivity {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
         String user=preferences.getString("username","");
 
-        PostInformation2 post=new PostInformation2(f1.getText().toString().trim(),user,postRandomName.toString());
+        PostInformation3 post=new PostInformation3(f1.getText().toString().trim(),user,postRandomName.toString());
 
         DatabaseReference d=FirebaseDatabase.getInstance().getReference("Coaching");
 

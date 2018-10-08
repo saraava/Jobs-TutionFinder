@@ -103,7 +103,7 @@ public class MainActivity extends AppCompatActivity
 
 
         } else if (id == R.id.nav_coaching) {
-            Intent i=new Intent(getApplicationContext(),Coach.class);
+            Intent i=new Intent(getApplicationContext(),Coachx.class);
             startActivity(i);
             Toast.makeText(this,"Coaching",Toast.LENGTH_LONG).show();
 
