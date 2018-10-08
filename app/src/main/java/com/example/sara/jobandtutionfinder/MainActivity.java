@@ -110,7 +110,7 @@ public class MainActivity extends AppCompatActivity
 
 
         } else if (id == R.id.nav_home) {
-            Intent i=new Intent(getApplicationContext(),HomeTeach.class);
+            Intent i=new Intent(getApplicationContext(),HomeTeachx.class);
             startActivity(i);
             Toast.makeText(this,"Home Tutor",Toast.LENGTH_LONG).show();
 
