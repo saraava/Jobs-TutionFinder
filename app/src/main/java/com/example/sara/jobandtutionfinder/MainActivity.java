@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity
             startActivity(i);
             Toast.makeText(this,"Welcome to your profile",Toast.LENGTH_LONG).show();
         } else if (id == R.id.nav_part) {
-           Intent i=new Intent(getApplicationContext(),partfrag.class);
+           Intent i=new Intent(getApplicationContext(),Part.class);
             startActivity(i);
             Toast.makeText(this,"Part time",Toast.LENGTH_LONG).show();
 

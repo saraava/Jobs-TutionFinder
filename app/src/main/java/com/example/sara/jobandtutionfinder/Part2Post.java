@@ -15,17 +15,18 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-public class PartPost extends AppCompatActivity {
+public class Part2Post extends AppCompatActivity {
+
     private EditText f1;
     private Button fbutton;
     private DatabaseReference databaseReference;
     FirebaseAuth mAuth;
     private String se1,saveCurrentDate, saveCurrentTime,current_user_id;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_part_post);
-
+        setContentView(R.layout.activity_part2_post);
         f1=(EditText) findViewById(R.id.pp1);
         fbutton=(Button) findViewById(R.id.pb1);
         databaseReference= FirebaseDatabase.getInstance().getReference();
@@ -63,7 +64,7 @@ public class PartPost extends AppCompatActivity {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
         String user=preferences.getString("username","");
 
-        PostInfo01 post=new PostInfo01(f1.getText().toString().trim(),user,postRandomName.toString());
+       StudentInfo1 post=new StudentInfo1(f1.getText().toString().trim(),user,postRandomName.toString());
 
         DatabaseReference d=FirebaseDatabase.getInstance().getReference("PartTimeJob");
 

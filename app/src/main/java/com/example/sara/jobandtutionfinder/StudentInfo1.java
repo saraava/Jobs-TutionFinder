@@ -1,16 +1,15 @@
 package com.example.sara.jobandtutionfinder;
 
-public class PostInfo01 {
-
+public class StudentInfo1 {
     String postp,username,datep;
 
-    public PostInfo01(String posth, String username, String dateh) {
-        this.postp = posth;
+    public StudentInfo1(String postp, String username, String datep) {
+        this.postp = postp;
         this.username = username;
-        this.datep = dateh;
+        this.datep = datep;
     }
 
-    public PostInfo01(){
+    public StudentInfo1(){
 
     }
 
@@ -18,8 +17,8 @@ public class PostInfo01 {
         return postp;
     }
 
-    public void setPostp(String posth) {
-        this.postp = posth;
+    public void setPostp(String postp) {
+        this.postp = postp;
     }
 
     public String getUsername() {
@@ -34,7 +33,7 @@ public class PostInfo01 {
         return datep;
     }
 
-    public void setDatep(String dateh) {
-        this.datep = dateh;
+    public void setDatep(String datep) {
+        this.datep = datep;
     }
 }
