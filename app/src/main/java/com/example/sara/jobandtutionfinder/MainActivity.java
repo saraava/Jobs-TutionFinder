@@ -107,14 +107,14 @@ public class MainActivity extends AppCompatActivity
 
 
         } else if (id == R.id.nav_coaching) {
-            Intent i=new Intent(getApplicationContext(),fullfrag.class);
+            Intent i=new Intent(getApplicationContext(),Coachx.class);
             startActivity(i);
             Toast.makeText(this,"Coaching",Toast.LENGTH_LONG).show();
 
 
 
         } else if (id == R.id.nav_home) {
-            Intent i=new Intent(getApplicationContext(),fullfrag.class);
+            Intent i=new Intent(getApplicationContext(),Homex.class);
             startActivity(i);
             Toast.makeText(this,"Home Tutor",Toast.LENGTH_LONG).show();
 

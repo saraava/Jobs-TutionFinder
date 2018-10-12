@@ -42,7 +42,15 @@
         <activity android:name=".selectCls" />
         <activity android:name=".bookSelections" />
         <activity android:name=".showCv" />
-        <activity android:name=".forgetpassword"></activity>
+        <activity android:name=".forgetpassword" />
+        <activity android:name=".Coachx" />
+        <activity android:name=".CoachxPostPage" />
+        <activity android:name=".CoachxJob" />
+        <activity android:name=".Homex" />
+        <activity android:name=".Homexpost" />
+        <activity android:name=".HomexJob2" />
+        <activity android:name=".PartPost" />
+        <activity android:name=".PartJob"></activity>
     </application>
 
 </manifest>

@@ -15,7 +15,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-public class FullTimePostPage extends AppCompatActivity {
+public class Homexpost extends AppCompatActivity {
     private EditText f1;
     private Button fbutton;
     private DatabaseReference databaseReference;
@@ -25,9 +25,9 @@ public class FullTimePostPage extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_full_time_post_page);
-        f1=(EditText) findViewById(R.id.f1);
-        fbutton=(Button) findViewById(R.id.fbutton);
+        setContentView(R.layout.activity_homexpost);
+        f1=(EditText) findViewById(R.id.hp1);
+        fbutton=(Button) findViewById(R.id.hb1);
         databaseReference= FirebaseDatabase.getInstance().getReference();
 
         mAuth=FirebaseAuth.getInstance();
@@ -63,9 +63,9 @@ public class FullTimePostPage extends AppCompatActivity {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
         String user=preferences.getString("username","");
 
-        PostInformation1 post=new PostInformation1(f1.getText().toString().trim(),user,postRandomName.toString());
+        PostInfo4 post=new PostInfo4(f1.getText().toString().trim(),user,postRandomName.toString());
 
-        DatabaseReference d=FirebaseDatabase.getInstance().getReference("FullTimeJob");
+        DatabaseReference d= FirebaseDatabase.getInstance().getReference("HomeTutor");
 
         d.child(current_user_id+postRandomName).setValue(post);
 
