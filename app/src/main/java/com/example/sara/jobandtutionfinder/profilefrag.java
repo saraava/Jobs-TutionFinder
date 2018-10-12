@@ -1,5 +1,6 @@
 package com.example.sara.jobandtutionfinder;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -33,6 +34,7 @@ public class profilefrag extends AppCompatActivity{
     FirebaseAuth firebaseAuth;
     FirebaseDatabase firebaseDatabase;
     FirebaseStorage firebaseStorage;
+
 
 
 
@@ -82,18 +84,23 @@ public class profilefrag extends AppCompatActivity{
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 User userProfile = dataSnapshot.getValue(User.class);
-                profileName.setText("Name          :" + userProfile.getName());
-                profileEmail.setText("Email          :"+userProfile.getEmailid());
-                profilegender.setText("Gender           :"+userProfile.getGender());
-                profilestid.setText("Student ID      :"+userProfile.getStudentid());
-                profiledept.setText("Department   :"+userProfile.getDept());
-                profilelevel.setText("Level              :"+userProfile.getLevel());
+                profileName.setText("Name  :" + userProfile.getName());
+                profileEmail.setText("Email  :"+userProfile.getEmailid());
+                profilegender.setText("Gender  :"+userProfile.getGender());
+                profilestid.setText("Student ID  :"+userProfile.getStudentid());
+                profiledept.setText("Department  :"+userProfile.getDept());
+                profilelevel.setText("Level  :"+userProfile.getLevel());
+
+
+
+
+
 
             }
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-                Toast.makeText(profilefrag.this, databaseError.getCode(), Toast.LENGTH_SHORT).show();
+               // Toast.makeText(profilefrag.this, databaseError.getCode(), Toast.LENGTH_SHORT).show();
 
             }
         });

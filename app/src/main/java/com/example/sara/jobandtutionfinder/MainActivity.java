@@ -20,6 +20,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+    String studentid,gender;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +28,9 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        studentid=getIntent().getStringExtra("Studentid");
+        gender=getIntent().getStringExtra("Gender");
 
        /* FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -130,8 +134,10 @@ public class MainActivity extends AppCompatActivity
         }
         else if(id==R.id.nav_settings){
             Intent i=new Intent(getApplicationContext(),settingfrag.class);
+            i.putExtra("Studentid",studentid);
+            i.putExtra("Gender",gender);
             startActivity(i);
-            Toast.makeText(this,"setting",Toast.LENGTH_LONG).show();
+            Toast.makeText(MainActivity.this,studentid,Toast.LENGTH_SHORT).show();
 
         }
         else if(id==R.id.nav_logout){

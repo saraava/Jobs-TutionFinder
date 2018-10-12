@@ -29,123 +29,119 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="170dp"
+        android:layout_height="354dp"
         android:layout_alignParentBottom="true"
-        android:background="#add7ad">
+        android:layout_alignParentStart="true"
+        android:background="#add7ad"
+        android:layout_alignParentLeft="true">
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="400dp"
-            android:background="#add7ad">
+            android:layout_height="320dp"
+            >
 
 
             <TextView
-                android:id="@+id/textView19"
+                android:id="@+id/textView8"
                 android:layout_width="166dp"
-                android:layout_height="48dp"
+                android:layout_height="46dp"
+                android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginTop="11dp"
-                android:textStyle="normal"
+                android:text="Username"
                 android:textSize="18dp"
-                android:text="Name"
-                android:layout_alignParentLeft="true" />
+                />
 
             <EditText
                 android:id="@+id/nametxt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
-                android:layout_alignTop="@+id/textView19"
+                android:layout_alignParentTop="true"
                 android:ems="10"
                 android:inputType="textPersonName"
                 android:text=""
                 android:layout_alignParentRight="true" />
 
-            <EditText
-                android:id="@+id/leveltxt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="166dp"
+                android:layout_height="46dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/textView8"
+                android:text="Gender"
+                android:textSize="18dp"/>
+
+            <Spinner
+                android:id="@+id/genderspinner"
+                android:layout_width="210dp"
+                android:layout_height="46dp"
                 android:layout_alignParentEnd="true"
-                android:layout_below="@+id/textView22"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:layout_alignParentRight="true" />
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/textView8"
+                android:entries="@array/gender" />
 
             <EditText
                 android:id="@+id/stidtxt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
-                android:layout_below="@+id/textView20"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/textView10"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:text=""
-                android:layout_alignParentRight="true" />
+                android:text="" />
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="166dp"
+                android:layout_height="46dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/textView10"
+                android:text="Student ID"
+                android:textSize="18dp"/>
 
             <EditText
                 android:id="@+id/depttxt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
                 android:layout_below="@+id/stidtxt"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:layout_alignParentRight="true" />
+                android:text="" />
 
             <TextView
-                android:id="@+id/textView20"
+                android:id="@+id/textView15"
                 android:layout_width="166dp"
-                android:layout_height="45dp"
+                android:layout_height="46dp"
                 android:layout_alignParentStart="true"
-                android:layout_below="@+id/textView19"
-                android:textStyle="normal"
+                android:layout_centerVertical="true"
+                android:text="Department"
                 android:textSize="18dp"
-                android:text="Gender"
                 android:layout_alignParentLeft="true" />
 
             <TextView
                 android:id="@+id/textView21"
                 android:layout_width="166dp"
-                android:layout_height="42dp"
+                android:layout_height="46dp"
                 android:layout_alignParentStart="true"
-                android:layout_below="@+id/spinner"
-                android:textStyle="normal"
+                android:layout_below="@+id/depttxt"
+                android:text="Level"
                 android:textSize="18dp"
-                android:text="Student ID"
-                android:layout_alignParentLeft="true" />
-
-            <TextView
-                android:id="@+id/textView22"
-                android:layout_width="166dp"
-                android:layout_height="47dp"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/stidtxt"
-                android:textStyle="normal"
-                android:textSize="18dp"
-                android:text="Department"
                 android:layout_alignParentLeft="true" />
 
             <Spinner
-                android:id="@+id/spinner"
-                android:layout_width="212dp"
+                android:id="@+id/levelspinner"
+                android:layout_width="210dp"
                 android:layout_height="46dp"
                 android:layout_alignParentEnd="true"
-                android:layout_below="@+id/textView19"
-                android:entries="@array/gender"
-                android:layout_alignParentRight="true" />
-
-            <TextView
-                android:id="@+id/textView23"
-                android:layout_width="166dp"
-                android:layout_height="46dp"
-                android:layout_alignParentStart="true"
-                android:layout_alignTop="@+id/leveltxt"
-                android:text="Level"
-                android:textSize="18dp"
-                android:textStyle="normal"
-                android:layout_alignParentLeft="true" />
+                android:layout_alignParentRight="true"
+                android:layout_alignTop="@+id/textView21"
+                android:entries="@array/level" />
 
             <Button
                 android:id="@+id/savebtnn"
@@ -153,17 +149,19 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
+                android:layout_marginBottom="37dp"
                 android:background="#6aa66a"
                 android:text="Save"
-                android:textColor="#000"
-                android:textSize="25dp"
+                android:textSize="20dp"
                 android:textStyle="bold" />
+
+
+
+
         </RelativeLayout>
 
 
-
     </ScrollView>
-
 
 
 </RelativeLayout>

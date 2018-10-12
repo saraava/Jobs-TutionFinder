@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 public class settingfrag extends AppCompatActivity {
     private Button bSetting,bupdate;
-
+String studentid,gender;
 
 
         @Override
@@ -19,6 +19,8 @@ public class settingfrag extends AppCompatActivity {
             setContentView(R.layout.activity_settings);
             bSetting=(Button) findViewById(R.id.chng_pass);
             bupdate=(Button) findViewById(R.id.update_profile);
+            studentid=getIntent().getStringExtra("Studentid");
+            gender=getIntent().getStringExtra("Gender");
             bSetting.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -33,6 +35,9 @@ public class settingfrag extends AppCompatActivity {
                 public void onClick(View v) {
 
                     Intent intentu=new Intent(settingfrag.this,updateProfile.class);
+                    intentu.putExtra("Studentid",studentid);
+                    intentu.putExtra("Gender",gender);
+                    Toast.makeText(settingfrag.this,studentid,Toast.LENGTH_SHORT).show();
                     startActivity(intentu);
                     }
 

@@ -31,91 +31,98 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="170dp"
+        android:layout_height="368dp"
         android:layout_alignParentBottom="true"
+        android:layout_marginTop="170dp"
         android:background="#add7ad">
 
-        <LinearLayout
+
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            >
+            android:layout_height="270dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true">
+
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="166dp"
+                android:layout_height="46dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:text="Username"
+                android:textSize="18dp" />
 
             <EditText
                 android:id="@+id/nametxt"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="218dp"
+                android:layout_height="46dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginEnd="0dp"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:layout_marginRight="50dp"
-                android:layout_marginTop="50dp"
-                android:layout_marginLeft="50dp"
-                android:textAlignment="center"
-                android:hint="Name"
-                android:textSize="18dp"/>
+                android:text=""
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="0dp" />
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="166dp"
+                android:layout_height="46dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/textView8"
+                android:text="Department"
+                android:textSize="18dp" />
 
 
             <EditText
-                android:id="@+id/stidtxt"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
-                android:layout_marginRight="50dp"
-                android:layout_marginTop="10dp"
+                android:id="@+id/depttxt"
+                android:layout_width="218dp"
+                android:layout_height="46dp"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@+id/textView8"
                 android:ems="10"
-                android:hint="Student ID"
                 android:inputType="textPersonName"
-                android:textAlignment="center"
-                android:textSize="18dp"/>
+                android:text=""
+                tools:ignore="UnknownId"
+                android:layout_alignParentRight="true" />
 
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="166dp"
+                android:layout_height="46dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/textView10"
+                android:text="Level"
+                android:textSize="18dp" />
 
-
-           <EditText
-               android:id="@+id/depttxt"
-               android:layout_width="match_parent"
-               android:layout_height="wrap_content"
-               android:hint="Department"
-               android:inputType="textPersonName"
-               android:layout_marginRight="50dp"
-               android:layout_marginTop="10dp"
-               android:layout_marginLeft="50dp"
-               android:textAlignment="center"
-               android:textSize="18dp"/>
-
-            <EditText
-                android:id="@+id/leveltxt"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Level"
-                android:inputType="textPersonName"
-                android:layout_marginRight="50dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="50dp"
-                android:textAlignment="center"
-                android:textSize="18dp"
-                />
+            <Spinner
+                android:id="@+id/levelspinner"
+                android:layout_width="217dp"
+                android:layout_height="46dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/textView10"
+                android:entries="@array/level" />
 
             <Button
                 android:id="@+id/savebtn"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="140dp"
-                android:layout_marginTop="70dp"
-                android:layout_marginLeft="140dp"
-                android:textAlignment="center"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#6aa66a"
+                android:text="Update"
                 android:textSize="20dp"
-                android:text="Save"
-                android:textStyle="bold"
-                />
+                android:textStyle="bold" />
 
 
-        </LinearLayout>
-
-
-
-
-
+        </RelativeLayout>
 
 
     </ScrollView>

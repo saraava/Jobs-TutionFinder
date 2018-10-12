@@ -9,19 +9,16 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
@@ -34,8 +31,8 @@ import java.io.IOException;
 
 public class register extends AppCompatActivity{
 
-    private EditText userName,userlevel,userdept, userid;
-    Spinner genderspinner;
+    private EditText userName,userdept, userid;
+    Spinner genderspinner,levelspinner;
     private Button regButton;
     private FirebaseAuth firebaseAuth;
     private ImageView userProfilePic;
@@ -45,6 +42,9 @@ public class register extends AppCompatActivity{
     FirebaseStorage firebaseStorage;
     StorageReference storageReference;
     Context context;
+
+
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -93,8 +93,10 @@ public class register extends AppCompatActivity{
             @Override
             public void onClick(View view) {
                 sendUserData();
-                Intent toy = new Intent(register.this,MainActivity.class);
-                startActivity(toy);
+                Intent intent = new Intent(register.this,MainActivity.class);
+                intent.putExtra("Studentid",stid);
+                intent.putExtra("Gender",gender);
+                startActivity(intent);
 
             }
         });
@@ -106,10 +108,10 @@ public class register extends AppCompatActivity{
     private void setupUIViews(){
         userName = (EditText)findViewById(R.id.nametxt);
         userdept = findViewById(R.id.depttxt);
-        userlevel = findViewById(R.id.leveltxt);
+        levelspinner = findViewById(R.id.levelspinner);
         regButton = findViewById(R.id.savebtnn);
         userid = findViewById(R.id.stidtxt);
-        genderspinner = findViewById(R.id.spinner);
+        genderspinner = findViewById(R.id.genderspinner);
         userProfilePic = (ImageView)findViewById(R.id.ivProfile);
 
 
@@ -118,7 +120,6 @@ public class register extends AppCompatActivity{
 
         if (TextUtils.isEmpty(level)){
             Toast.makeText(register.this,"enter your level",Toast.LENGTH_SHORT).show();
-
 
         }
 
@@ -136,21 +137,19 @@ public class register extends AppCompatActivity{
 
     }
 
-
-
-
     private void sendUserData(){
         name = userName.getText().toString().trim();
         stid = userid.getText().toString().trim();
-        level = userlevel.getText().toString().trim();
+        level = levelspinner.getSelectedItem().toString();
         dept = userdept.getText().toString().trim();
         gender = genderspinner.getSelectedItem().toString();
 
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         email = user.getEmail();
 
-        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = firebaseDatabase.getReference("User").child(firebaseAuth.getUid());
+         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+         DatabaseReference myref = firebaseDatabase.getReference("User").child(firebaseAuth.getUid());
+
 
         StorageReference imageReference = storageReference.child(firebaseAuth.getUid()).child("Images").child("Profile Pic");  //User id/Images/Profile Pic.jpg
         UploadTask uploadTask = imageReference.putFile(imagePath);
@@ -165,18 +164,19 @@ public class register extends AppCompatActivity{
                 Toast.makeText(register.this, "Upload successful!", Toast.LENGTH_SHORT).show();
             }
         });
+
+
         User userProfile = new User(name,email,stid,dept,level,gender,imagePath.toString());
-        myRef.setValue(userProfile);
+        myref.setValue(userProfile);
 
-        if(myRef.setValue(userProfile).isSuccessful()){
-            Toast.makeText(register.this,"upload success",Toast.LENGTH_SHORT).show();
-        }
 
-        else
-        {
-            Toast.makeText(register.this,"registration done",Toast.LENGTH_SHORT).show();
 
-        }
+
+        DatabaseReference myrefemail = firebaseDatabase.getReference("All users").child(stid);
+
+        User userProfile1 = new User(name,email,stid,dept,level,gender,imagePath.toString());
+        myrefemail.setValue(userProfile1);
+
 
 
     }

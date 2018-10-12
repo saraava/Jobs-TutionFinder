@@ -38,7 +38,7 @@ import java.io.IOException;
 public class updateProfile extends AppCompatActivity {
 
     EditText userName,userlevel,userdept, userEmail, userid;
-    Spinner genderspinner;
+    Spinner genderspinner,levelspinner;
     Button updatebtn;
     FirebaseAuth firebaseAuth;
     ImageView userProfilePic;
@@ -48,8 +48,9 @@ public class updateProfile extends AppCompatActivity {
     FirebaseStorage firebaseStorage;
     StorageReference storageReference;
     FirebaseDatabase firebaseDatabase;
+    DatabaseReference myref;
     Context context;
-    String currentid;
+    String studentid1,gender1;
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -72,17 +73,17 @@ public class updateProfile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_updateprofile);
 
-        //setContentView(R.layout.activity_profile);
+        studentid1 = getIntent().getStringExtra("Studentid");
+        gender1=getIntent().getStringExtra("Gender");
+
 
         context = this;
 
         userName = (EditText)findViewById(R.id.nametxt);
         userdept = findViewById(R.id.depttxt);
-        userlevel = findViewById(R.id.leveltxt);
+        levelspinner=findViewById(R.id.levelspinner);
         updatebtn = findViewById(R.id.savebtn);
-        userid = findViewById(R.id.stidtxt);
         userProfilePic = (ImageView)findViewById(R.id.ivProfile);
-
         userProfilePic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -121,7 +122,10 @@ public class updateProfile extends AppCompatActivity {
     void updatepro() {
 
         firebaseDatabase = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = firebaseDatabase.getReference("User").child(firebaseAuth.getUid());
+        //DatabaseReference myref = firebaseDatabase.getReference("User").child(firebaseAuth.getUid());
+        final DatabaseReference databaseReference = firebaseDatabase.getReference("User");
+
+
 
         StorageReference imageReference = storageReference.child(firebaseAuth.getUid()).child("Images").child("Profile Pic");
         UploadTask uploadTask = imageReference.putFile(imagePath);
@@ -137,28 +141,13 @@ public class updateProfile extends AppCompatActivity {
             }
         });
 
-        myRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                User userPro = dataSnapshot.getValue(User.class);
-                gender = userPro.getGender();
-
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
 
 
-
-
+       //Toast.makeText(updateProfile.this,"stid"+studentid1,Toast.LENGTH_SHORT).show();
 
         name = userName.getText().toString().trim();
         dept = userdept.getText().toString().trim();
-        stid = userid.getText().toString().trim();
-        level = userlevel.getText().toString().trim();
+        level = levelspinner.getSelectedItem().toString();
 
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         email = user.getEmail();
@@ -166,8 +155,17 @@ public class updateProfile extends AppCompatActivity {
 
 
 
-        User userProfile = new User(name,email,stid,dept,level,gender,imagePath.toString());
-        myRef.setValue(userProfile);
+        User userProfile = new User(name,email,studentid1,dept,level,gender1,imagePath.toString());
+        databaseReference.child(firebaseAuth.getCurrentUser().getUid()).setValue(userProfile);
+
+
+
+
+        DatabaseReference myRefemail = firebaseDatabase.getReference("All users").child(studentid1);
+        User userProfile1 = new User(name,email,studentid1,dept,level,gender1,imagePath.toString());
+        myRefemail.setValue(userProfile1);
+
+
 
 
     }
