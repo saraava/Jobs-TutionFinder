@@ -10,6 +10,7 @@ import android.widget.TextView;
 public class partfrag extends AppCompatActivity{
 
     private TextView givepost,otherspost;
+    String namee,imagee,PartPostKey;
 
 
     @Override
@@ -20,18 +21,26 @@ public class partfrag extends AppCompatActivity{
         givepost = findViewById(R.id.p1);
         otherspost = findViewById(R.id.p2);
 
+        namee=getIntent().getStringExtra("Name");
+        imagee=getIntent().getStringExtra("Image");
+        PartPostKey=getIntent().getStringExtra("PartPostKey");
+
         givepost.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent toy = new Intent(partfrag.this,PartPost.class);
-                startActivity(toy);
+                Intent i= new Intent(partfrag.this,partfrag_give_postt.class);
+                i.putExtra("Name",namee);
+                i.putExtra("Image",imagee);
+
+                startActivity(i);
             }
         });
 
         otherspost.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent toy1 = new Intent(partfrag.this,PartJob.class);
+                Intent toy1 = new Intent(partfrag.this,partfrag_others_postt.class);
+                toy1.putExtra("PartPostKey",PartPostKey);
                 startActivity(toy1);
 
             }

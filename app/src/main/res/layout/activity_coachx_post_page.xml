@@ -8,22 +8,26 @@
     android:orientation="vertical">
 
     <EditText
-        android:id="@+id/cp1"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textShortMessage"
-        android:hint="Give your post"
-        android:textAlignment="center"
-        android:textSize="22dp"
-        android:textStyle="bold|italic" />
-
+        android:layout_marginTop="70dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:hint="Say something........"
+        android:textSize="18dp"
+        android:id="@+id/postttxt"
+        />
 
     <Button
-        android:id="@+id/cb1"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="post"/>
+        android:text="Post"
+        android:textSize="18dp"
+        android:layout_marginLeft="260dp"
+        android:layout_marginRight="20dp"
+        android:id="@+id/btntxt"/>
+
 
 
 </LinearLayout>

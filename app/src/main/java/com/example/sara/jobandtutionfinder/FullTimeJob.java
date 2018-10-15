@@ -3,8 +3,11 @@ package com.example.sara.jobandtutionfinder;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -18,32 +21,42 @@ import java.util.List;
 public class FullTimeJob extends AppCompatActivity {
 
 
-    private ListView listV;
-    List<PostInformation1> l = new ArrayList<>();
+    DatabaseReference reference;
+    RecyclerView recyclerView;
+    ArrayList<PostInformation1> list;
+    CustomAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_full_time_job);
 
-        listV=findViewById(R.id.list1);
+        //listV=findViewById(R.id.list1);
 
-        DatabaseReference d= FirebaseDatabase.getInstance().getReference("FullTimeJob");
-        d.addValueEventListener(new ValueEventListener() {
+        recyclerView = (RecyclerView) findViewById(R.id.rePerson);
+        recyclerView.setLayoutManager( new LinearLayoutManager(this));
+
+
+        reference = FirebaseDatabase.getInstance().getReference("Full_Time_Job").child("Posts");
+        reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                for(DataSnapshot i:dataSnapshot.getChildren()){
-                    l.add(i.getValue(PostInformation1.class));
+                list = new ArrayList<PostInformation1>();
+                for(DataSnapshot dataSnapshot1: dataSnapshot.getChildren())
+                {
+                    PostInformation1 p = dataSnapshot1.getValue(PostInformation1.class);
+                    list.add(p);
                 }
-                CustomAdapter c=new CustomAdapter(FullTimeJob.this,l);
-                listV.setAdapter(c);
-
+                adapter = new CustomAdapter(FullTimeJob.this,list);
+                recyclerView.setAdapter(adapter);
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
+                Toast.makeText(FullTimeJob.this, "Opsss.... Something is wrong", Toast.LENGTH_SHORT).show();
             }
         });
+
+
     }
 }

@@ -35,8 +35,6 @@
         <activity android:name=".changePass" />
         <activity android:name=".updateProfile" />
         <activity android:name=".registersave" />
-        <activity android:name=".partfarag_givepost" />
-        <activity android:name=".partfrag_otherspost" />
         <activity android:name=".FullTimePostPage" />
         <activity android:name=".FullTimeJob" />
         <activity android:name=".selectCls" />
@@ -49,8 +47,12 @@
         <activity android:name=".Homex" />
         <activity android:name=".Homexpost" />
         <activity android:name=".HomexJob2" />
-        <activity android:name=".PartPost" />
-        <activity android:name=".PartJob"></activity>
+        <activity android:name=".partfrag_give_postt" />
+        <activity android:name=".partfrag_others_postt" />
+        <activity android:name=".commentsactivity03" />
+        <activity android:name=".CommentsActivitypartfrag" />
+        <activity android:name=".CommentsActivityfullfrag" />
+        <activity android:name=".CommentsActivityHomefrag"></activity>
     </application>
 
 </manifest>

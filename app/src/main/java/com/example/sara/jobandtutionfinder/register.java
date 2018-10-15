@@ -96,6 +96,8 @@ public class register extends AppCompatActivity{
                 Intent intent = new Intent(register.this,MainActivity.class);
                 intent.putExtra("Studentid",stid);
                 intent.putExtra("Gender",gender);
+                intent.putExtra("Name",name);
+                intent.putExtra("Image",imagePath.toString());
                 startActivity(intent);
 
             }
@@ -151,7 +153,7 @@ public class register extends AppCompatActivity{
          DatabaseReference myref = firebaseDatabase.getReference("User").child(firebaseAuth.getUid());
 
 
-        StorageReference imageReference = storageReference.child(firebaseAuth.getUid()).child("Images").child("Profile Pic");  //User id/Images/Profile Pic.jpg
+        StorageReference imageReference = storageReference.child(firebaseAuth.getUid());  //User id/Images/Profile Pic.jpg
         UploadTask uploadTask = imageReference.putFile(imagePath);
         uploadTask.addOnFailureListener(new OnFailureListener() {
             @Override

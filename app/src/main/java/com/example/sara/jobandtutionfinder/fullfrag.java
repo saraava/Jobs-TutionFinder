@@ -14,8 +14,8 @@ public class fullfrag extends AppCompatActivity{
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_full);
-        button_post=(Button)findViewById(R.id.fulltime_post_button);
-        button_others=(Button)findViewById(R.id.fulltime_others_button);
+        button_post=(Button)findViewById(R.id.c1);
+        button_others=(Button)findViewById(R.id.c2);
 
 
         button_post.setOnClickListener(new View.OnClickListener() {

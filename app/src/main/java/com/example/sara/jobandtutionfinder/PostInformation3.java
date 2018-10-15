@@ -1,38 +1,68 @@
 package com.example.sara.jobandtutionfinder;
 
 public class PostInformation3 {
-    String cpost,username,cdate;
+    public String uid, time, date, description, profileimage, fullname;
 
-    public PostInformation3(String cpost, String username, String cdate) {
-        this.cpost = cpost;
-        this.username = username;
-        this.cdate = cdate;
-    }
-    public PostInformation3(){
-
+    public PostInformation3() {
     }
 
-    public String getCpost() {
-        return cpost;
+    public String getUid() {
+        return uid;
     }
 
-    public void setCpost(String cpost) {
-        this.cpost = cpost;
+    public void setUid(String uid) {
+        this.uid = uid;
     }
 
-    public String getUsername() {
-        return username;
+    public String getTime() {
+        return time;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setTime(String time) {
+        this.time = time;
     }
 
-    public String getCdate() {
-        return cdate;
+    public String getDate() {
+        return date;
     }
 
-    public void setCdate(String cdate) {
-        this.cdate = cdate;
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getProfileimage() {
+        return profileimage;
+    }
+
+    public void setProfileimage(String profileimage) {
+        this.profileimage = profileimage;
+    }
+
+    public String getFullname() {
+        return fullname;
+    }
+
+    public void setFullname(String fullname) {
+        this.fullname = fullname;
+    }
+
+    public PostInformation3(String uid, String time, String date, String description, String profileimage, String fullname) {
+        this.uid = uid;
+        this.time = time;
+        this.date = date;
+        this.description = description;
+        this.profileimage = profileimage;
+        this.fullname = fullname;
+
+
+
     }
 }

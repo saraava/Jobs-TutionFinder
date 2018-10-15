@@ -1,39 +1,69 @@
 package com.example.sara.jobandtutionfinder;
 
 public class PostInfo4 {
-    String posth,username,dateh;
+    public String uid, time, date, description, profileimage, fullname;
 
-    public PostInfo4(String posth, String username, String dateh) {
-        this.posth = posth;
-        this.username = username;
-        this.dateh = dateh;
+    public PostInfo4() {
     }
 
-    public PostInfo4(){
-
+    public String getUid() {
+        return uid;
     }
 
-    public String getPosth() {
-        return posth;
+    public void setUid(String uid) {
+        this.uid = uid;
     }
 
-    public void setPosth(String posth) {
-        this.posth = posth;
+    public String getTime() {
+        return time;
     }
 
-    public String getUsername() {
-        return username;
+    public void setTime(String time) {
+        this.time = time;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public String getDate() {
+        return date;
     }
 
-    public String getDateh() {
-        return dateh;
+    public void setDate(String date) {
+        this.date = date;
     }
 
-    public void setDateh(String dateh) {
-        this.dateh = dateh;
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getProfileimage() {
+        return profileimage;
+    }
+
+    public void setProfileimage(String profileimage) {
+        this.profileimage = profileimage;
+    }
+
+    public String getFullname() {
+        return fullname;
+    }
+
+    public void setFullname(String fullname) {
+        this.fullname = fullname;
+    }
+
+    public PostInfo4(String uid, String time, String date, String description, String profileimage, String fullname) {
+        this.uid = uid;
+        this.time = time;
+        this.date = date;
+        this.description = description;
+        this.profileimage = profileimage;
+        this.fullname = fullname;
+
+
+
+
     }
 }

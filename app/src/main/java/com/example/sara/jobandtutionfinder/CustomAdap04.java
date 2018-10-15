@@ -1,54 +1,103 @@
 package com.example.sara.jobandtutionfinder;
 
 import android.content.Context;
+import android.content.Intent;
+import android.support.annotation.NonNull;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.squareup.picasso.Picasso;
+
+import java.util.ArrayList;
 import java.util.List;
 
-public class CustomAdap04 extends BaseAdapter {
-    List<PostInfo4> stuinfo;
+public class CustomAdap04 extends RecyclerView.Adapter<CustomAdap04.MyViewHolder> {
+
     Context context;
-    private LayoutInflater inflater;
+    ArrayList<PostInfo4> profiles;
 
-    public CustomAdap04(Context c,List l) {
-        this.context=c;
-        this.stuinfo = l;
+    public CustomAdap04(Context c , ArrayList<PostInfo4> p)
+    {
+        context = c;
+        profiles = p;
+    }
+
+    @NonNull
+    @Override
+    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        return new MyViewHolder(LayoutInflater.from(context).inflate(R.layout.s4,parent,false));
+
     }
 
     @Override
-    public int getCount() {
-        return stuinfo.size();
+    public void onBindViewHolder(@NonNull MyViewHolder holder, int position)
+    {
+        holder.namee.setText(profiles.get(position).getFullname());
+        holder.postdes.setText(profiles.get(position).getDescription());
+        holder.time_date.setText(profiles.get(position).getDate() + " at "+profiles.get(position).getTime());
+        Picasso.get().load(profiles.get(position).getProfileimage()).into(holder.profilePic);
+        String sara = profiles.get(position).getProfileimage();
+        Toast.makeText(context, sara, Toast.LENGTH_SHORT).show();
+
+        //do nothing
+        //do nothing
+        //do nothing
+        //do nothing
+        //do nothing
+        //do nothing
+        //do nothing
+        //do nothing
+
+        holder.onClick();
+
+
     }
 
     @Override
-    public Object getItem(int i) {
-        return null;
+    public int getItemCount() {
+        return profiles.size();
     }
 
-    @Override
-    public long getItemId(int i) {
-        return 0;
-    }
+    public class MyViewHolder extends RecyclerView.ViewHolder {
 
-    @Override
-    public View getView(int i, View view, ViewGroup viewGroup) {
-        if(view==null){
-            inflater=(LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            view=inflater.inflate(R.layout.s4,viewGroup,false);
+        TextView namee,time_date,postdes;
+        ImageView profilePic;
+        Button btn;
+
+
+        public MyViewHolder(View itemView) {
+            super(itemView);
+            namee = (TextView) itemView.findViewById(R.id.post_user_name);
+            profilePic = (ImageView) itemView.findViewById(R.id.imgup);
+            time_date =itemView.findViewById(R.id.date_time);
+            postdes = itemView.findViewById(R.id.post_description);
+            btn =  itemView.findViewById(R.id.commentbtnn);
+
 
         }
 
-        TextView textView1=view.findViewById(R.id.hsamplet1);
-        TextView textView3=view.findViewById(R.id.hsamplet3);
-        TextView textView2=view.findViewById(R.id.hsamplet2);
+        void onClick() {
+            btn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
 
-        textView1.setText(stuinfo.get(i).getUsername());
-        textView3.setText(stuinfo.get(i).getDateh());
-        textView2.setText(stuinfo.get(i).getPosth());
-        return  view;
+                    Intent toy1 = new Intent(context,CommentsActivityHomefrag.class);
+                    context.startActivity(toy1);
+
+
+
+                }
+            });
+
+        }
     }
+
+
 }

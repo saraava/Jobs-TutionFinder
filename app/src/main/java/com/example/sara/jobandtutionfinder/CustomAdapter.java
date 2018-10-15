@@ -1,55 +1,102 @@
 package com.example.sara.jobandtutionfinder;
 
 import android.content.Context;
+import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.squareup.picasso.Picasso;
+
+import java.util.ArrayList;
 import java.util.List;
 
-public class CustomAdapter extends BaseAdapter {
-    List <PostInformation1> stuinfo;
+public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHolder>{
+
     Context context;
-    private LayoutInflater inflater;
+    ArrayList<PostInformation1> profiles;
 
-    public CustomAdapter(Context c,List l) {
-        this.context=c;
-        this.stuinfo = l;
+    public CustomAdapter(Context c , ArrayList<PostInformation1> p)
+    {
+        context = c;
+        profiles = p;
+    }
+
+    @NonNull
+    @Override
+    public CustomAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        return new MyViewHolder(LayoutInflater.from(context).inflate(R.layout.sample2,parent,false));
+
     }
 
     @Override
-    public int getCount() {
-        return stuinfo.size();
+    public void onBindViewHolder(@NonNull CustomAdapter.MyViewHolder holder, int position)
+    {
+        holder.namee.setText(profiles.get(position).getFullname());
+        holder.postdes.setText(profiles.get(position).getDescription());
+        holder.time_date.setText(profiles.get(position).getDate() + " at "+profiles.get(position).getTime());
+        Picasso.get().load(profiles.get(position).getProfileimage()).into(holder.profilePic);
+        String sara = profiles.get(position).getProfileimage();
+        Toast.makeText(context, sara, Toast.LENGTH_SHORT).show();
+
+        //do nothing
+        //do nothing
+        //do nothing
+        //do nothing
+        //do nothing
+        //do nothing
+        //do nothing
+        //do nothing
+
+        holder.onClick();
+
+
     }
 
     @Override
-    public Object getItem(int i) {
-        return null;
+    public int getItemCount() {
+        return profiles.size();
     }
 
-    @Override
-    public long getItemId(int i) {
-        return 0;
-    }
+    public class MyViewHolder extends RecyclerView.ViewHolder {
 
-    @Override
-    public View getView(int i, View view, ViewGroup viewGroup) {
-        if(view==null){
-            inflater=(LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            view=inflater.inflate(R.layout.sample2,viewGroup,false);
+        TextView namee,time_date,postdes;
+        ImageView profilePic;
+        Button btn;
+
+
+        public MyViewHolder(View itemView) {
+            super(itemView);
+            namee = (TextView) itemView.findViewById(R.id.post_user_name);
+            profilePic = (ImageView) itemView.findViewById(R.id.imgup);
+            time_date =itemView.findViewById(R.id.date_time);
+            postdes = itemView.findViewById(R.id.post_description);
+            btn =  itemView.findViewById(R.id.commentbtnn);
+
 
         }
 
-        TextView textView1=view.findViewById(R.id.fsamplet1);
-        TextView textView3=view.findViewById(R.id.fsamplet3);
-        TextView textView2=view.findViewById(R.id.fsamplet2);
+         void onClick() {
+             btn.setOnClickListener(new View.OnClickListener() {
+                 @Override
+                 public void onClick(View v) {
 
-        textView1.setText(stuinfo.get(i).getUsername());
-        textView3.setText(stuinfo.get(i).getTime());
-        textView2.setText(stuinfo.get(i).getPost());
-        return  view;
+                     Intent toy1 = new Intent(context,CommentsActivityfullfrag.class);
+                     context.startActivity(toy1);
+
+
+
+                 }
+             });
+
+        }
     }
 }

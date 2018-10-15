@@ -1,73 +1,126 @@
 package com.example.sara.jobandtutionfinder;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.StorageReference;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 public class FullTimePostPage extends AppCompatActivity {
-    private EditText f1;
-    private Button fbutton;
-    private DatabaseReference databaseReference;
-    FirebaseAuth mAuth;
-    private String se1,saveCurrentDate, saveCurrentTime,current_user_id;
+    private Button UpdatePostButton;
+    private EditText PostDescription;
+
+
+    private String Description, getpostkey;
+
+
+    private StorageReference PostsImagesRefrence;
+    private DatabaseReference UsersRef, PostsRef;
+    private FirebaseAuth mAuth;
+
+    String namee, imagee, userFullName, userProfileImage;
+
+
+    private String saveCurrentDate, saveCurrentTime, postRandomName, downloadUrl, current_user_id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_full_time_post_page);
-        f1=(EditText) findViewById(R.id.f1);
-        fbutton=(Button) findViewById(R.id.fbutton);
-        databaseReference= FirebaseDatabase.getInstance().getReference();
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        current_user_id = user.getUid();
 
-        mAuth=FirebaseAuth.getInstance();
-        current_user_id = mAuth.getCurrentUser().getUid();
-        fbutton.setOnClickListener(new View.OnClickListener() {
+
+
+        UsersRef = FirebaseDatabase.getInstance().getReference("User");
+        PostsRef = FirebaseDatabase.getInstance().getReference("Full_Time_Job").child("Posts");
+
+
+        UpdatePostButton = (Button) findViewById(R.id.btntxt);
+        PostDescription = (EditText) findViewById(R.id.postttxt);
+
+        UpdatePostButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                saveInfo();
-                f1.setText("");
-
-
-
+                ValidatePostInfo();
             }
         });
+
+
     }
 
-    void saveInfo(){
+    private void ValidatePostInfo() {
+        Description = PostDescription.getText().toString();
+
+        if (TextUtils.isEmpty(Description)) {
+            Toast.makeText(this, "Please say something about your image...", Toast.LENGTH_SHORT).show();
+        } else {
 
 
-        //setDate
-        se1=f1.getText().toString().trim();
+            StoringImageToFirebaseStorage();
+        }
+    }
+
+    void StoringImageToFirebaseStorage() {
+
         Calendar calFordDate = Calendar.getInstance();
         SimpleDateFormat currentDate = new SimpleDateFormat("dd-MMMM-yyyy");
         saveCurrentDate = currentDate.format(calFordDate.getTime());
+
         Calendar calFordTime = Calendar.getInstance();
         SimpleDateFormat currentTime = new SimpleDateFormat("HH:mm");
         saveCurrentTime = currentTime.format(calFordDate.getTime());
-        String postRandomName = saveCurrentDate + saveCurrentTime;
+
+        postRandomName = saveCurrentDate + saveCurrentTime;
+        getpostkey = current_user_id + postRandomName;
+
+        SavingPostInformationToDatabase();
+    }
+
+    void SavingPostInformationToDatabase() {
+        UsersRef.child(current_user_id).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                User userProfile = dataSnapshot.getValue(User.class);
+
+                userFullName = userProfile.getName().toString().trim();
+                userProfileImage = userProfile.getImageUrl().toString().trim();
 
 
+                PostInformation1 p = new PostInformation1(current_user_id, saveCurrentTime, saveCurrentDate, Description, userProfileImage, userFullName);
+                PostsRef.child(getpostkey).setValue(p);
 
-        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
-        String user=preferences.getString("username","");
+                Intent intent = new Intent(FullTimePostPage.this,MainActivity.class);
+                startActivity(intent);
 
-        PostInformation1 post=new PostInformation1(f1.getText().toString().trim(),user,postRandomName.toString());
 
-        DatabaseReference d=FirebaseDatabase.getInstance().getReference("FullTimeJob");
+            }
 
-        d.child(current_user_id+postRandomName).setValue(post);
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+
+            }
+
+        });
+
 
     }
 }

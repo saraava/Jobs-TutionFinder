@@ -127,7 +127,7 @@ public class updateProfile extends AppCompatActivity {
 
 
 
-        StorageReference imageReference = storageReference.child(firebaseAuth.getUid()).child("Images").child("Profile Pic");
+        StorageReference imageReference = storageReference.child(firebaseAuth.getUid());
         UploadTask uploadTask = imageReference.putFile(imagePath);
         uploadTask.addOnFailureListener(new OnFailureListener() {
             @Override

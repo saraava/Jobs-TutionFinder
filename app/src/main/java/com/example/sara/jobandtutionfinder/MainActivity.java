@@ -20,7 +20,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-    String studentid,gender;
+    String studentid,gender,namee,imagee,PartPostKey;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +31,9 @@ public class MainActivity extends AppCompatActivity
 
         studentid=getIntent().getStringExtra("Studentid");
         gender=getIntent().getStringExtra("Gender");
+        namee=getIntent().getStringExtra("Name");
+        imagee=getIntent().getStringExtra("Image");
+        PartPostKey=getIntent().getStringExtra("PartPostKey");
 
        /* FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -95,14 +98,18 @@ public class MainActivity extends AppCompatActivity
             Toast.makeText(this,"Welcome to your profile",Toast.LENGTH_LONG).show();
         } else if (id == R.id.nav_part) {
            Intent i=new Intent(getApplicationContext(),partfrag.class);
+            i.putExtra("Name",namee);
+            i.putExtra("Image",imagee);
+            i.putExtra("PartPostKey",PartPostKey);
             startActivity(i);
-            Toast.makeText(this,"Part time",Toast.LENGTH_LONG).show();
+
+            Toast.makeText(this,PartPostKey,Toast.LENGTH_LONG).show();
 
 
         } else if (id == R.id.nav_full) {
             Intent i=new Intent(getApplicationContext(),fullfrag.class);
             startActivity(i);
-            Toast.makeText(this,"Full time",Toast.LENGTH_LONG).show();
+            Toast.makeText(this,"Full Time",Toast.LENGTH_LONG).show();
 
 
 
