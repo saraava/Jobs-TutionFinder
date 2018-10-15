@@ -52,7 +52,7 @@
         <activity android:name=".commentsactivity03" />
         <activity android:name=".CommentsActivitypartfrag" />
         <activity android:name=".CommentsActivityfullfrag" />
-        <activity android:name=".CommentsActivityHomefrag"></activity>
+        <activity android:name=".CommentsActivityHomefrag" />
     </application>
 
 </manifest>
