@@ -23,6 +23,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Random;
 
 public class commentsactivity03 extends AppCompatActivity {
 
@@ -119,7 +120,9 @@ public class commentsactivity03 extends AppCompatActivity {
         saveCurrentTime = currentTime.format(calFordDate.getTime());
 
         postRandomName = saveCurrentDate + saveCurrentTime;
-        commentkey = current_user_id + postRandomName;
+        Random r = new Random();
+        int n=r.nextInt(100)+1;
+        commentkey = current_user_id + postRandomName+n;
 
         SavingCommentInformationToDatabase();
     }

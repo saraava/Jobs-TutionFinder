@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class CommentsAdapter04 extends BaseAdapter {
+public  class CommentsAdapter04 extends BaseAdapter {
 
     private Context activity;
     private ArrayList<comment04class> allstudent=new ArrayList<>();

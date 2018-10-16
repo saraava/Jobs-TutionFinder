@@ -39,10 +39,9 @@ public class partfrag_others_postt extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_partfrag_others_postt);
 
-        recyclerView = (RecyclerView) findViewById(R.id.rePerson);
-        recyclerView.setLayoutManager( new LinearLayoutManager(this));
-        PartPostKey=getIntent().getStringExtra(PartPostKey);
 
+        recyclerView = (RecyclerView) findViewById(R.id.rePerson);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         reference = FirebaseDatabase.getInstance().getReference("Part_Time_Job").child("Posts");
         reference.addValueEventListener(new ValueEventListener() {
