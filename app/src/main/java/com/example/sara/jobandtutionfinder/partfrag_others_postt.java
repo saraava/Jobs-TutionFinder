@@ -32,12 +32,17 @@ public class partfrag_others_postt extends AppCompatActivity {
     ArrayList<post> list;
     MyAdapter adapter;
     String PartPostKey;
-
+    static String value;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_partfrag_others_postt);
+
+
+        //MyAdapter c1 = new MyAdapter();
+        //c1.setUID("Hi");
+        value= "hi";
 
 
         recyclerView = (RecyclerView) findViewById(R.id.rePerson);
@@ -59,7 +64,7 @@ public class partfrag_others_postt extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-                Toast.makeText(partfrag_others_postt.this, "Opsss.... Something is wrong", Toast.LENGTH_SHORT).show();
+
             }
         });
 

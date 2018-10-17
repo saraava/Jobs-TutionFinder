@@ -40,14 +40,17 @@
         android:hint="Write here....."
         android:layout_alignParentLeft="true" />
 
-    <Button
+    <ImageButton
         android:id="@+id/comment_click"
-        android:layout_width="109dp"
-        android:layout_height="wrap_content"
+        android:layout_width="87dp"
+        android:layout_height="46dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/good_one_new"
         android:text="Comment"
-        android:layout_alignParentRight="true" />
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="16dp" />
 
 
 </RelativeLayout>

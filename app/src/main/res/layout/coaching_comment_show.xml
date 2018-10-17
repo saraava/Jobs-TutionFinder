@@ -15,28 +15,43 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:padding="5dp"
         android:orientation="vertical">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginBottom="3dp"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        android:id="@+id/getemail"
-        />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="10dp">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="15dp"
-        android:id="@+id/timeshow"
-        android:layout_marginLeft="20dp"
-        android:layout_marginBottom="10dp"/>
 
-    <TextView
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="3dp"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:id="@+id/getemail"
+                />
+
+            <TextView
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:textSize="18dp"
+                android:textStyle="normal"
+                android:id="@+id/timeshow"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="3dp"
+                />
+
+
+        </LinearLayout>
+
+
+
+        <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/post_description_show"

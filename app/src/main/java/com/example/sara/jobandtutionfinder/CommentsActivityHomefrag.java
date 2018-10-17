@@ -6,6 +6,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -30,7 +31,7 @@ public class CommentsActivityHomefrag extends AppCompatActivity {
 
     ListView lv;
     ArrayList<comment04class> allstudent;
-    Button comment;
+    ImageButton comment;
     comment04class student;
 
 
@@ -69,6 +70,7 @@ public class CommentsActivityHomefrag extends AppCompatActivity {
         ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+                allstudent.clear();
                 for(DataSnapshot i:dataSnapshot.getChildren())
                 {
                     student = i.getValue(comment04class.class);

@@ -91,11 +91,6 @@ public class profilefrag extends AppCompatActivity{
                 profiledept.setText("Department  :"+userProfile.getDept());
                 profilelevel.setText("Level  :"+userProfile.getLevel());
 
-
-
-
-
-
             }
 
             @Override

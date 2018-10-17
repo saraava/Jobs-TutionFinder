@@ -57,7 +57,7 @@ public class CommentsAdapter02 extends BaseAdapter{
         }
         viewHolder.email.setText(allstudent.get(pos).getEemail());
         viewHolder.postdes.setText(allstudent.get(pos).getCommentdes());
-        viewHolder.timee.setText(allstudent.get(pos).getTimee());
+        viewHolder.timee.setText("->"+allstudent.get(pos).getDatee()+" "+allstudent.get(pos).getTimee());
 
         return view;
     }

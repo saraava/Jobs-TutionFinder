@@ -34,8 +34,9 @@ public class CommentsActivitypartfrag extends AppCompatActivity {
 
     ListView lv;
     ArrayList<comment01class> allstudent;
-    Button comment;
+    ImageButton comment;
     comment01class student;
+    String strUID;
     Random r;
 
 
@@ -47,6 +48,10 @@ public class CommentsActivitypartfrag extends AppCompatActivity {
         comment = findViewById(R.id.comment_click);
         commentbox = findViewById(R.id.comment_inputs);
         mAuth = FirebaseAuth.getInstance();
+
+        strUID=getIntent().getStringExtra("Value");
+
+        Toast.makeText(this,strUID,Toast.LENGTH_SHORT).show();
 
 
         lv = findViewById(R.id.listallstudent);
@@ -74,6 +79,8 @@ public class CommentsActivitypartfrag extends AppCompatActivity {
         ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+
+                allstudent.clear();
                 for(DataSnapshot i:dataSnapshot.getChildren())
                 {
                     student = i.getValue(comment01class.class);

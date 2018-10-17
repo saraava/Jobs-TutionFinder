@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -17,9 +18,15 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
+public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
     Context context;
     ArrayList<post> profiles;
+
+    public String value=partfrag_others_postt.value;
+
+   // public  String strUID = "";
+
+
 
     public MyAdapter(Context c , ArrayList<post> p)
     {
@@ -42,9 +49,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         holder.time_date.setText(profiles.get(position).getDate() + " at "+profiles.get(position).getTime());
         Picasso.get().load(profiles.get(position).getProfileimage()).into(holder.profilePic);
 
-        String sara = profiles.get(position).getProfileimage();
-        Toast.makeText(context, sara, Toast.LENGTH_SHORT).show();
-
 
         holder.onClick();
 
@@ -59,7 +63,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
         TextView namee,time_date,postdes;
         ImageView profilePic;
-        Button btn;
+        ImageButton btn;
 
         public MyViewHolder(View itemView) {
             super(itemView);
@@ -77,6 +81,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
                 public void onClick(View v) {
 
                     Intent toy1 = new Intent(context,CommentsActivitypartfrag.class);
+                    toy1.putExtra("Value",value);
                     context.startActivity(toy1);
 
 

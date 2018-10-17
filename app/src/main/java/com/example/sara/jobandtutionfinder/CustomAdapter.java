@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -23,6 +24,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
 
     Context context;
     ArrayList<PostInformation1> profiles;
+
 
     public CustomAdapter(Context c , ArrayList<PostInformation1> p)
     {
@@ -44,8 +46,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
         holder.postdes.setText(profiles.get(position).getDescription());
         holder.time_date.setText(profiles.get(position).getDate() + " at "+profiles.get(position).getTime());
         Picasso.get().load(profiles.get(position).getProfileimage()).into(holder.profilePic);
-        String sara = profiles.get(position).getProfileimage();
-        Toast.makeText(context, sara, Toast.LENGTH_SHORT).show();
+
 
         //do nothing
         //do nothing
@@ -70,7 +71,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
 
         TextView namee,time_date,postdes;
         ImageView profilePic;
-        Button btn;
+        ImageButton btn;
 
 
         public MyViewHolder(View itemView) {

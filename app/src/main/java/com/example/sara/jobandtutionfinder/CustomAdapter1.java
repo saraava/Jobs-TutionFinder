@@ -1,11 +1,13 @@
 package com.example.sara.jobandtutionfinder;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -13,8 +15,28 @@ public class CustomAdapter1 extends BaseAdapter {
     List<StudentInfo1> stuinfo;
     Context context;
     private LayoutInflater inflater;
+    public  String UID = "";
 
-    public CustomAdapter1(Context c,List l) {
+    public CustomAdapter1() {
+
+    }
+
+    public CustomAdapter1(List<StudentInfo1> stuinfo, Context context, LayoutInflater inflater, String UID) {
+        this.stuinfo = stuinfo;
+        this.context = context;
+        this.inflater = inflater;
+        this.UID = UID;
+    }
+
+    public String getUID() {
+        return UID;
+    }
+
+    public void setUID(String UID) {
+        this.UID = UID;
+    }
+
+    public CustomAdapter1(Context c, List l) {
         this.context=c;
         this.stuinfo = l;
     }

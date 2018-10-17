@@ -35,7 +35,7 @@ public class commentsactivity03 extends AppCompatActivity {
 
     ListView lv;
     ArrayList<comment03class> allstudent;
-    Button comment;
+    ImageButton comment;
     comment03class student;
 
     @Override
@@ -73,6 +73,7 @@ public class commentsactivity03 extends AppCompatActivity {
         ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+                allstudent.clear();
                 for(DataSnapshot i:dataSnapshot.getChildren())
                 {
                     student = i.getValue(comment03class.class);
