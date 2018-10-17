@@ -48,7 +48,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
         Picasso.get().load(profiles.get(position).getProfileimage()).into(holder.profilePic);
 
 
-        //do nothing
+
         //do nothing
         //do nothing
         //do nothing

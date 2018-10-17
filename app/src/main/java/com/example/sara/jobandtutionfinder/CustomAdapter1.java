@@ -17,24 +17,7 @@ public class CustomAdapter1 extends BaseAdapter {
     private LayoutInflater inflater;
     public  String UID = "";
 
-    public CustomAdapter1() {
 
-    }
-
-    public CustomAdapter1(List<StudentInfo1> stuinfo, Context context, LayoutInflater inflater, String UID) {
-        this.stuinfo = stuinfo;
-        this.context = context;
-        this.inflater = inflater;
-        this.UID = UID;
-    }
-
-    public String getUID() {
-        return UID;
-    }
-
-    public void setUID(String UID) {
-        this.UID = UID;
-    }
 
     public CustomAdapter1(Context c, List l) {
         this.context=c;

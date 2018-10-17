@@ -16,6 +16,7 @@ public class CommentsAdapter01 extends BaseAdapter {
     private Context activity;
     private ArrayList<comment01class> allstudent=new ArrayList<>();
     private LayoutInflater layoutInflater=null;
+    String l;
 
     private static class ViewHolder{
         private TextView email,postdes,timee,datee;

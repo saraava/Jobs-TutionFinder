@@ -37,6 +37,7 @@ public class commentsactivity03 extends AppCompatActivity {
     ArrayList<comment03class> allstudent;
     ImageButton comment;
     comment03class student;
+    String l;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

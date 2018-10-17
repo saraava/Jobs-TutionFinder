@@ -33,6 +33,7 @@ public class CommentsActivityfullfrag extends AppCompatActivity {
     ArrayList<comment02class> allstudent;
     ImageButton comment;
     comment02class student;
+    String l;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

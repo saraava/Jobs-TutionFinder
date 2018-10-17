@@ -21,6 +21,7 @@ import java.util.ArrayList;
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
     Context context;
     ArrayList<post> profiles;
+    String l;
 
     public String value=partfrag_others_postt.value;
 

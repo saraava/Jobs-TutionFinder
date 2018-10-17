@@ -43,7 +43,7 @@ public class CustomAdapter03 extends RecyclerView.Adapter<CustomAdapter03.MyView
         Picasso.get().load(profiles.get(position).getProfileimage()).into(holder.profilePic);
 
 
-        //do nothing
+
         //do nothing
         //do nothing
         //do nothing

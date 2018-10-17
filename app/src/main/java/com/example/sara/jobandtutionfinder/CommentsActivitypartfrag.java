@@ -38,6 +38,7 @@ public class CommentsActivitypartfrag extends AppCompatActivity {
     comment01class student;
     String strUID;
     Random r;
+    String l;
 
 
     @Override

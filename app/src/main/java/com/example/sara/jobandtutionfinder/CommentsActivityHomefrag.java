@@ -33,6 +33,7 @@ public class CommentsActivityHomefrag extends AppCompatActivity {
     ArrayList<comment04class> allstudent;
     ImageButton comment;
     comment04class student;
+    String l;
 
 
     @Override
