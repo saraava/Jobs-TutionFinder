@@ -35,6 +35,18 @@ public class login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+
+
+        SharedPreferences session = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        String ss = session.getString("currentUser", "");
+        //Toast.makeText(getApplicationContext(),ss,Toast.LENGTH_SHORT).show();
+
+        if (!ss.isEmpty()) {
+            Intent intent = new Intent(login.this,MainActivity.class);
+            startActivity(intent);
+        }
+
+
         emailtxt = (EditText) findViewById(R.id.editText);
         passwordtxt = findViewById(R.id.passwordtxt);
         loginbtn = findViewById(R.id.Login);
@@ -100,6 +112,10 @@ public class login extends AppCompatActivity {
                                 s.edit().putString("username",email).commit();
                                 Toast.makeText(getApplicationContext(),"Login success",Toast.LENGTH_SHORT).show();
                                 finish();
+
+                                SharedPreferences session = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+                                session.edit().putString("currentUser",email).commit();
+
                                 Intent toy = new Intent(login.this,MainActivity.class);
                                 startActivity(toy);
 

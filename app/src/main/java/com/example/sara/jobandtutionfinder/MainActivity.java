@@ -1,8 +1,11 @@
 package com.example.sara.jobandtutionfinder;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
@@ -10,6 +13,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -17,10 +21,14 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-    String studentid,gender,namee,imagee,PartPostKey;
+    String studentid,gender,namee,imagee,PartPostKey,mail;
+    FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -148,9 +156,30 @@ public class MainActivity extends AppCompatActivity
 
         }
         else if(id==R.id.nav_logout){
-            Intent i=new Intent(getApplicationContext(),login.class);
-            startActivity(i);
-            Toast.makeText(this,"successfully logout",Toast.LENGTH_LONG).show();
+            AlertDialog.Builder builder=new AlertDialog.Builder(MainActivity.this);
+            builder.setTitle("Really Exit?")
+             .setMessage("Are you want to log out?")
+             .setPositiveButton("ok", new DialogInterface.OnClickListener() {
+                 @Override
+                 public void onClick(DialogInterface dialog, int which) {
+                     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                     mail = user.getEmail();
+                     FirebaseAuth.getInstance().signOut();
+                     finish();
+                     SharedPreferences mySPrefs =PreferenceManager.getDefaultSharedPreferences(MainActivity.this);
+                     SharedPreferences.Editor editor = mySPrefs.edit();
+                     editor.remove("currentUser");
+                     editor.apply();
+                     Intent i= new Intent(MainActivity.this,login.class);
+                     startActivity(i);
+                     Toast.makeText(MainActivity.this,mail+"Successfully logout",Toast.LENGTH_SHORT).show();
+
+                 }
+             }).setNegativeButton("Cancel",null).setCancelable(false);
+
+                AlertDialog alert=builder.create();
+                alert.show();
+
 
         }
 
