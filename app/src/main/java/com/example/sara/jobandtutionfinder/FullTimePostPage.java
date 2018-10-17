@@ -104,7 +104,7 @@ public class FullTimePostPage extends AppCompatActivity {
                 userProfileImage = userProfile.getImageUrl().toString().trim();
 
 
-                PostInformation1 p = new PostInformation1(current_user_id, saveCurrentTime, saveCurrentDate, Description, userProfileImage, userFullName);
+                PostInformation1 p = new PostInformation1(current_user_id, saveCurrentTime, saveCurrentDate, Description, userProfileImage, userFullName,getpostkey);
                 PostsRef.child(getpostkey).setValue(p);
 
                 Intent intent = new Intent(FullTimePostPage.this,MainActivity.class);

@@ -21,9 +21,9 @@ import java.util.ArrayList;
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
     Context context;
     ArrayList<post> profiles;
-    String l;
+    String partkey;
 
-    public String value=partfrag_others_postt.value;
+    //public String PartPostKey=partfrag_others_postt.PartPostKey;
 
    // public  String strUID = "";
 
@@ -49,6 +49,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
         holder.postdes.setText(profiles.get(position).getDescription());
         holder.time_date.setText(profiles.get(position).getDate() + " at "+profiles.get(position).getTime());
         Picasso.get().load(profiles.get(position).getProfileimage()).into(holder.profilePic);
+
+        partkey=profiles.get(position).getPostID().toString();
+        //Toast.makeText(context,partkey,Toast.LENGTH_SHORT).show();
 
 
         holder.onClick();
@@ -82,7 +85,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
                 public void onClick(View v) {
 
                     Intent toy1 = new Intent(context,CommentsActivitypartfrag.class);
-                    toy1.putExtra("Value",value);
+                    toy1.putExtra("PartPostKey",partkey);
                     context.startActivity(toy1);
 
 

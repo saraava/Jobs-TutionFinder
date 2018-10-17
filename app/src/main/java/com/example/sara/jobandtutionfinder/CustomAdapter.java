@@ -24,6 +24,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
 
     Context context;
     ArrayList<PostInformation1> profiles;
+    String partkey;
 
 
     public CustomAdapter(Context c , ArrayList<PostInformation1> p)
@@ -46,6 +47,8 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
         holder.postdes.setText(profiles.get(position).getDescription());
         holder.time_date.setText(profiles.get(position).getDate() + " at "+profiles.get(position).getTime());
         Picasso.get().load(profiles.get(position).getProfileimage()).into(holder.profilePic);
+
+        partkey = profiles.get(position).getPostID().toString();
 
 
 
@@ -91,6 +94,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
                  public void onClick(View v) {
 
                      Intent toy1 = new Intent(context,CommentsActivityfullfrag.class);
+                     toy1.putExtra("PartPostKey",partkey);
                      context.startActivity(toy1);
 
 

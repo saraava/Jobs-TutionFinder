@@ -31,8 +31,8 @@ public class partfrag_others_postt extends AppCompatActivity {
     RecyclerView recyclerView;
     ArrayList<post> list;
     MyAdapter adapter;
-    String PartPostKey;
-    static String value;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +42,7 @@ public class partfrag_others_postt extends AppCompatActivity {
 
         //MyAdapter c1 = new MyAdapter();
         //c1.setUID("Hi");
-        value= "hi";
+
 
 
         recyclerView = (RecyclerView) findViewById(R.id.rePerson);

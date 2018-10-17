@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity
     String studentid,gender,namee,imagee,PartPostKey,mail;
     FirebaseAuth mAuth;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

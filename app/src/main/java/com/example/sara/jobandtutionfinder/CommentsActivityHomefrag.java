@@ -33,7 +33,7 @@ public class CommentsActivityHomefrag extends AppCompatActivity {
     ArrayList<comment04class> allstudent;
     ImageButton comment;
     comment04class student;
-    String l;
+    String PartPostKey;
 
 
     @Override
@@ -49,13 +49,15 @@ public class CommentsActivityHomefrag extends AppCompatActivity {
         lv = findViewById(R.id.listallstudent);
         allstudent = new ArrayList<>();
 
+        PartPostKey=getIntent().getStringExtra("PartPostKey");
+
 
         current_user_id = mAuth.getCurrentUser().getUid();
 
 
-        ref= FirebaseDatabase.getInstance().getReference("Hometutor_post").child("Comments");
+        ref= FirebaseDatabase.getInstance().getReference("Hometutor_post").child("Posts").child(PartPostKey).child("Comments");
         UsersRef = FirebaseDatabase.getInstance().getReference("User");
-        PostsRef = FirebaseDatabase.getInstance().getReference("Hometutor_post").child("Comments");
+        PostsRef = FirebaseDatabase.getInstance().getReference("Hometutor_post").child("Posts").child(PartPostKey).child("Comments");
 
 
         comment.setOnClickListener(new View.OnClickListener() {

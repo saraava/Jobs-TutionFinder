@@ -9,6 +9,7 @@ import android.widget.Button;
 public class partfrag extends AppCompatActivity {
 
     private Button button_post,button_others;
+    String PartPostKey;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,6 +18,8 @@ public class partfrag extends AppCompatActivity {
 
         button_post=(Button)findViewById(R.id.c1);
         button_others=(Button)findViewById(R.id.c2);
+
+
 
 
         button_post.setOnClickListener(new View.OnClickListener() {

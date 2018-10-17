@@ -34,6 +34,7 @@ public class CommentsActivityfullfrag extends AppCompatActivity {
     ImageButton comment;
     comment02class student;
     String l;
+    String PartPostKey;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +46,8 @@ public class CommentsActivityfullfrag extends AppCompatActivity {
         commentbox = findViewById(R.id.comment_inputs);
         mAuth = FirebaseAuth.getInstance();
 
+        PartPostKey=getIntent().getStringExtra("PartPostKey");
+
 
         lv = findViewById(R.id.listallstudent);
         allstudent = new ArrayList<>();
@@ -53,9 +56,9 @@ public class CommentsActivityfullfrag extends AppCompatActivity {
         current_user_id = mAuth.getCurrentUser().getUid();
 
 
-        ref= FirebaseDatabase.getInstance().getReference("Full_Time_Job").child("Comments");
+        ref= FirebaseDatabase.getInstance().getReference("Full_Time_Job").child("Posts").child(PartPostKey).child("Comments");
         UsersRef = FirebaseDatabase.getInstance().getReference("User");
-        PostsRef = FirebaseDatabase.getInstance().getReference("Full_Time_Job").child("Comments");
+        PostsRef = FirebaseDatabase.getInstance().getReference("Full_Time_Job").child("Posts").child(PartPostKey).child("Comments");
 
 
         comment.setOnClickListener(new View.OnClickListener() {

@@ -93,7 +93,7 @@ public class register extends AppCompatActivity{
             @Override
             public void onClick(View view) {
                 sendUserData();
-                Intent intent = new Intent(register.this,login.class);
+                Intent intent = new Intent(register.this,MainActivity.class);
                 intent.putExtra("Studentid",stid);
                 intent.putExtra("Gender",gender);
                 intent.putExtra("Name",name);

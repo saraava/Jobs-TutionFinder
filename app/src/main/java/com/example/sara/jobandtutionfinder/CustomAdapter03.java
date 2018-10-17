@@ -22,6 +22,7 @@ import java.util.List;
 public class CustomAdapter03 extends RecyclerView.Adapter<CustomAdapter03.MyViewHolder> {
     Context context;
     ArrayList<PostInformation3> profiles;
+    String partkey;
 
     public CustomAdapter03(Context c, ArrayList<PostInformation3> p) {
         context = c;
@@ -41,6 +42,8 @@ public class CustomAdapter03 extends RecyclerView.Adapter<CustomAdapter03.MyView
         holder.postdes.setText(profiles.get(position).getDescription());
         holder.time_date.setText(profiles.get(position).getDate() + " at " + profiles.get(position).getTime());
         Picasso.get().load(profiles.get(position).getProfileimage()).into(holder.profilePic);
+
+        partkey = profiles.get(position).getPostID().toString();
 
 
 
@@ -86,6 +89,7 @@ public class CustomAdapter03 extends RecyclerView.Adapter<CustomAdapter03.MyView
                 public void onClick(View v) {
 
                     Intent toy1 = new Intent(context, commentsactivity03.class);
+                    toy1.putExtra("PartPostKey",partkey);
                     context.startActivity(toy1);
 
 

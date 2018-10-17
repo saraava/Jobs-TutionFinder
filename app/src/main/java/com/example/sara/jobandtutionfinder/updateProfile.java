@@ -48,7 +48,7 @@ public class updateProfile extends AppCompatActivity {
     FirebaseStorage firebaseStorage;
     StorageReference storageReference;
     FirebaseDatabase firebaseDatabase;
-    DatabaseReference myref;
+    DatabaseReference databaseReference;
     Context context;
     String studentid1,gender1;
 
@@ -123,11 +123,12 @@ public class updateProfile extends AppCompatActivity {
 
         firebaseDatabase = FirebaseDatabase.getInstance();
         //DatabaseReference myref = firebaseDatabase.getReference("User").child(firebaseAuth.getUid());
-        final DatabaseReference databaseReference = firebaseDatabase.getReference("User");
+        databaseReference = firebaseDatabase.getReference("User");
 
 
 
-        StorageReference imageReference = storageReference.child(firebaseAuth.getUid());
+        //StorageReference imageReference = storageReference;
+        StorageReference imageReference = storageReference.child(firebaseAuth.getUid());  //User id/Images/Profile Pic.jpg
         UploadTask uploadTask = imageReference.putFile(imagePath);
         uploadTask.addOnFailureListener(new OnFailureListener() {
             @Override

@@ -32,7 +32,7 @@ public class partfrag_give_postt extends AppCompatActivity {
     private EditText PostDescription;
 
 
-    private String Description, getpostkey;
+    String Description, getpostkey;
 
 
     private StorageReference PostsImagesRefrence;
@@ -111,12 +111,12 @@ public class partfrag_give_postt extends AppCompatActivity {
                 userProfileImage = userProfile.getImageUrl().toString().trim();
 
 
-                post p = new post(current_user_id, saveCurrentTime, saveCurrentDate, Description, userProfileImage, userFullName);
+                post p = new post(current_user_id, saveCurrentTime, saveCurrentDate, Description, userProfileImage, userFullName,getpostkey);
                 PostsRef.child(getpostkey).setValue(p);
 
                 Intent intent = new Intent(partfrag_give_postt.this,MainActivity.class);
-                intent.putExtra("PartPostKey",getpostkey);
                 startActivity(intent);
+                //Toast.makeText(partfrag_give_postt.this,getpostkey,Toast.LENGTH_SHORT).show();
 
 
             }

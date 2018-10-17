@@ -16,6 +16,9 @@ public class CommentsAdapter03 extends BaseAdapter {
     private LayoutInflater layoutInflater=null;
     String l;
 
+
+
+
     private static class ViewHolder{
         private TextView email,postdes,timee,datee;
     }

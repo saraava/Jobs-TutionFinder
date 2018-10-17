@@ -36,7 +36,7 @@ public class CommentsActivitypartfrag extends AppCompatActivity {
     ArrayList<comment01class> allstudent;
     ImageButton comment;
     comment01class student;
-    String strUID;
+    String PartPostKey;
     Random r;
     String l;
 
@@ -50,9 +50,11 @@ public class CommentsActivitypartfrag extends AppCompatActivity {
         commentbox = findViewById(R.id.comment_inputs);
         mAuth = FirebaseAuth.getInstance();
 
-        strUID=getIntent().getStringExtra("Value");
+        PartPostKey=getIntent().getStringExtra("PartPostKey");
 
-        Toast.makeText(this,strUID,Toast.LENGTH_SHORT).show();
+
+
+        Toast.makeText(this,PartPostKey,Toast.LENGTH_SHORT).show();
 
 
         lv = findViewById(R.id.listallstudent);
@@ -62,9 +64,9 @@ public class CommentsActivitypartfrag extends AppCompatActivity {
         current_user_id = mAuth.getCurrentUser().getUid();
 
 
-        ref=FirebaseDatabase.getInstance().getReference("Part_Time_Job").child("Comments");
+        ref=FirebaseDatabase.getInstance().getReference("Part_Time_Job").child("Posts").child(PartPostKey).child("Comments");
         UsersRef = FirebaseDatabase.getInstance().getReference("User");
-        PostsRef = FirebaseDatabase.getInstance().getReference("Part_Time_Job").child("Comments");
+        PostsRef = FirebaseDatabase.getInstance().getReference("Part_Time_Job").child("Posts").child(PartPostKey).child("Comments");
 
 
         comment.setOnClickListener(new View.OnClickListener() {

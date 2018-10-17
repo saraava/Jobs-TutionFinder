@@ -108,7 +108,7 @@ public class Homexpost extends AppCompatActivity {
                 userProfileImage = userProfile.getImageUrl().toString().trim();
 
 
-                PostInfo4 p = new PostInfo4(current_user_id, saveCurrentTime, saveCurrentDate, Description, userProfileImage, userFullName);
+                PostInfo4 p = new PostInfo4(current_user_id, saveCurrentTime, saveCurrentDate, Description, userProfileImage, userFullName,getpostkey);
                 PostsRef.child(getpostkey).setValue(p);
 
                 Intent intent = new Intent(Homexpost.this,MainActivity.class);

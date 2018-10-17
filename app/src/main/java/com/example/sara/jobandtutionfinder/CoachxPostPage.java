@@ -107,7 +107,7 @@ public class CoachxPostPage extends AppCompatActivity {
                 userProfileImage = userProfile.getImageUrl().toString().trim();
 
 
-                PostInformation3 p = new PostInformation3(current_user_id, saveCurrentTime, saveCurrentDate, Description, userProfileImage, userFullName);
+                PostInformation3 p = new PostInformation3(current_user_id, saveCurrentTime, saveCurrentDate, Description, userProfileImage, userFullName,getpostkey);
                 PostsRef.child(getpostkey).setValue(p);
 
                 Intent intent = new Intent(CoachxPostPage.this,MainActivity.class);

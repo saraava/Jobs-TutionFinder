@@ -37,7 +37,7 @@ public class commentsactivity03 extends AppCompatActivity {
     ArrayList<comment03class> allstudent;
     ImageButton comment;
     comment03class student;
-    String l;
+    String PartPostKey;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,10 +55,14 @@ public class commentsactivity03 extends AppCompatActivity {
 
         current_user_id = mAuth.getCurrentUser().getUid();
 
+        PartPostKey = getIntent().getStringExtra("PartPostKey");
 
-        ref= FirebaseDatabase.getInstance().getReference("Coaching").child("Comments");
+        Toast.makeText(this,PartPostKey,Toast.LENGTH_SHORT).show();
+
+
+        ref= FirebaseDatabase.getInstance().getReference("Coaching").child("Posts").child(PartPostKey).child("Comments");
         UsersRef = FirebaseDatabase.getInstance().getReference("User");
-        PostsRef = FirebaseDatabase.getInstance().getReference("Coaching").child("Comments");
+        PostsRef = FirebaseDatabase.getInstance().getReference("Coaching").child("Posts").child(PartPostKey).child("Comments");
 
 
         comment.setOnClickListener(new View.OnClickListener() {
