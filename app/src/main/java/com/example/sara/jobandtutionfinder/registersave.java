@@ -52,7 +52,7 @@ public class registersave extends AppCompatActivity {
                 String checkPass1 = spass.getText().toString().trim();
                 String checkPass2 = confpass.getText().toString().trim();
                 if (checkPass1.contentEquals(checkPass2)) {
-                    sendEmailVerification();
+                    //sendEmailVerification();
                     sign_in();
 
                 } else {
@@ -119,6 +119,7 @@ public class registersave extends AppCompatActivity {
                             Toast.makeText(registersave.this, "Registration successfull", Toast.LENGTH_SHORT).show();
                             Intent toy = new Intent(registersave.this, register.class);
                             startActivity(toy);
+                            //sendEmailVerification();
 
                         } else {
 

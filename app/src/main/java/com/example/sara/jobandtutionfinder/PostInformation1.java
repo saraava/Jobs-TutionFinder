@@ -1,7 +1,18 @@
 package com.example.sara.jobandtutionfinder;
 
 public class PostInformation1 {
-    public String uid, time, date, description, profileimage, fullname,postID;
+    public String uid, time, date, description, profileimage, fullname,postID,studentidd;
+
+    public PostInformation1(String uid, String time, String date, String description, String profileimage, String fullname, String postID, String studentidd) {
+        this.uid = uid;
+        this.time = time;
+        this.date = date;
+        this.description = description;
+        this.profileimage = profileimage;
+        this.fullname = fullname;
+        this.postID = postID;
+        this.studentidd = studentidd;
+    }
 
     public String getPostID() {
         return postID;
@@ -9,6 +20,14 @@ public class PostInformation1 {
 
     public void setPostID(String postID) {
         this.postID = postID;
+    }
+
+    public String getStudentidd() {
+        return studentidd;
+    }
+
+    public void setStudentidd(String studentidd) {
+        this.studentidd = studentidd;
     }
 
     public PostInformation1() {
@@ -62,13 +81,5 @@ public class PostInformation1 {
         this.time = time;
     }
 
-    public PostInformation1(String uid, String time, String date, String description, String profileimage, String fullname, String postID) {
-        this.uid = uid;
-        this.time = time;
-        this.date = date;
-        this.description = description;
-        this.profileimage = profileimage;
-        this.fullname = fullname;
-        this.postID = postID;
-    }
+
 }

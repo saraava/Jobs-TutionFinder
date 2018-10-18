@@ -21,7 +21,7 @@ import java.util.ArrayList;
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
     Context context;
     ArrayList<post> profiles;
-    String partkey;
+    String partkey,stid;
     int id;
 
     //public String PartPostKey=partfrag_others_postt.PartPostKey;
@@ -49,13 +49,16 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
         holder.namee.setText(profiles.get(position).getFullname());
         holder.postdes.setText(profiles.get(position).getDescription());
         holder.time_date.setText(profiles.get(position).getDate() + " at "+profiles.get(position).getTime());
+        holder.studentidd.setText(profiles.get(position).getStudentidd());
         Picasso.get().load(profiles.get(position).getProfileimage()).into(holder.profilePic);
+        stid=profiles.get(position).getStudentidd().toString();
 
         partkey=profiles.get(position).getPostID().toString();
         //Toast.makeText(context,position,Toast.LENGTH_SHORT).show();
         id=position;
 
         holder.onClick();
+        holder.onclick2();
 
     }
 
@@ -66,7 +69,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
-        TextView namee,time_date,postdes;
+        TextView namee,time_date,postdes,studentidd;
         ImageView profilePic;
         ImageButton btn;
 
@@ -78,6 +81,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
             time_date =itemView.findViewById(R.id.date_time);
             postdes = itemView.findViewById(R.id.post_description);
             btn =  itemView.findViewById(R.id.commentbtnn);
+            studentidd=itemView.findViewById(R.id.post_user_stid);
         }
 
         void onClick() {
@@ -95,6 +99,19 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
                 }
             });
 
+        }
+
+        public void onclick2() {
+
+            studentidd.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent toy1 = new Intent(context,othersprofile.class);
+                    toy1.putExtra("Stid",stid);
+                    context.startActivity(toy1);
+
+                }
+            });
         }
     }
 }

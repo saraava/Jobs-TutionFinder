@@ -33,18 +33,38 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-
-                <TextView
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="25dp"
-                    android:id="@+id/post_user_name"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginTop="8dp"
-                    android:textSize="20dp"
-                    android:text="User name"
-                    android:textStyle="bold"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
-                    />
+
+                    <TextView
+                        android:layout_width="150dp"
+                        android:layout_height="25dp"
+                        android:id="@+id/post_user_name"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="8dp"
+                        android:textSize="20dp"
+                        android:text="User name"
+                        android:textStyle="bold"
+
+                        />
+                    <TextView
+                        android:layout_width="120dp"
+                        android:layout_height="25dp"
+                        android:id="@+id/post_user_stid"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="8dp"
+                        android:textSize="20dp"
+                        android:text="User name"
+                        android:textStyle="bold"
+
+                        />
+
+                </LinearLayout>
+
+
 
                 <LinearLayout
                     android:layout_width="match_parent"

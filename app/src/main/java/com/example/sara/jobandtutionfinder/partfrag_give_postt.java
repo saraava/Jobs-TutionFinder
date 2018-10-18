@@ -39,7 +39,7 @@ public class partfrag_give_postt extends AppCompatActivity {
     private DatabaseReference UsersRef, PostsRef;
     private FirebaseAuth mAuth;
 
-    String namee, imagee, userFullName, userProfileImage;
+    String namee, imagee, userFullName, userProfileImage,studentidd;
 
 
     private String saveCurrentDate, saveCurrentTime, postRandomName, downloadUrl, current_user_id;
@@ -109,9 +109,10 @@ public class partfrag_give_postt extends AppCompatActivity {
 
                 userFullName = userProfile.getName().toString().trim();
                 userProfileImage = userProfile.getImageUrl().toString().trim();
+                studentidd=userProfile.getStudentid().toString().trim();
 
 
-                post p = new post(current_user_id, saveCurrentTime, saveCurrentDate, Description, userProfileImage, userFullName,getpostkey);
+                post p = new post(current_user_id, saveCurrentTime, saveCurrentDate, Description, userProfileImage, userFullName,getpostkey,studentidd);
                 PostsRef.child(getpostkey).setValue(p);
 
                 Intent intent = new Intent(partfrag_give_postt.this,MainActivity.class);

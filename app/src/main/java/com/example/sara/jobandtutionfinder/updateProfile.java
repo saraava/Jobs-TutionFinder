@@ -156,14 +156,14 @@ public class updateProfile extends AppCompatActivity {
 
 
 
-        User userProfile = new User(name,email,studentid1,dept,level,gender1,imagePath.toString());
+        User userProfile = new User(name,email,studentid1,dept,gender1,level,imagePath.toString());
         databaseReference.child(firebaseAuth.getCurrentUser().getUid()).setValue(userProfile);
 
 
 
 
         DatabaseReference myRefemail = firebaseDatabase.getReference("All users").child(studentid1);
-        User userProfile1 = new User(name,email,studentid1,dept,level,gender1,imagePath.toString());
+        User userProfile1 = new User(name,email,studentid1,dept,gender1,level,imagePath.toString());
         myRefemail.setValue(userProfile1);
 
 

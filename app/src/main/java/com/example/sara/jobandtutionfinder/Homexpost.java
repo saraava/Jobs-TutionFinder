@@ -36,7 +36,7 @@ public class Homexpost extends AppCompatActivity {
     private DatabaseReference UsersRef, PostsRef;
     private FirebaseAuth mAuth;
 
-    String namee, imagee, userFullName, userProfileImage;
+    String namee, imagee, userFullName, userProfileImage,studentidd;
 
 
     private String saveCurrentDate, saveCurrentTime, postRandomName, downloadUrl, current_user_id;
@@ -106,9 +106,10 @@ public class Homexpost extends AppCompatActivity {
 
                 userFullName = userProfile.getName().toString().trim();
                 userProfileImage = userProfile.getImageUrl().toString().trim();
+                studentidd=userProfile.getStudentid().toString().trim();
 
 
-                PostInfo4 p = new PostInfo4(current_user_id, saveCurrentTime, saveCurrentDate, Description, userProfileImage, userFullName,getpostkey);
+                PostInfo4 p = new PostInfo4(current_user_id, saveCurrentTime, saveCurrentDate, Description, userProfileImage, userFullName,getpostkey,studentidd);
                 PostsRef.child(getpostkey).setValue(p);
 
                 Intent intent = new Intent(Homexpost.this,MainActivity.class);

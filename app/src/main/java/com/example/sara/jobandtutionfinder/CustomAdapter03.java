@@ -22,7 +22,7 @@ import java.util.List;
 public class CustomAdapter03 extends RecyclerView.Adapter<CustomAdapter03.MyViewHolder> {
     Context context;
     ArrayList<PostInformation3> profiles;
-    String partkey;
+    String partkey,stid;
 
     public CustomAdapter03(Context c, ArrayList<PostInformation3> p) {
         context = c;
@@ -41,9 +41,11 @@ public class CustomAdapter03 extends RecyclerView.Adapter<CustomAdapter03.MyView
         holder.namee.setText(profiles.get(position).getFullname());
         holder.postdes.setText(profiles.get(position).getDescription());
         holder.time_date.setText(profiles.get(position).getDate() + " at " + profiles.get(position).getTime());
+        holder.studentidd.setText(profiles.get(position).getStudentidd());
         Picasso.get().load(profiles.get(position).getProfileimage()).into(holder.profilePic);
 
         partkey = profiles.get(position).getPostID().toString();
+        stid=profiles.get(position).getStudentidd().toString();
 
 
 
@@ -56,6 +58,7 @@ public class CustomAdapter03 extends RecyclerView.Adapter<CustomAdapter03.MyView
         //do nothing
 
         holder.onClick();
+        holder.onclick2();
 
 
     }
@@ -67,7 +70,7 @@ public class CustomAdapter03 extends RecyclerView.Adapter<CustomAdapter03.MyView
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
-        TextView namee, time_date, postdes;
+        TextView namee, time_date, postdes,studentidd;
         ImageView profilePic;
         ImageButton btn;
 
@@ -79,6 +82,7 @@ public class CustomAdapter03 extends RecyclerView.Adapter<CustomAdapter03.MyView
             time_date = itemView.findViewById(R.id.date_time);
             postdes = itemView.findViewById(R.id.post_description);
             btn = itemView.findViewById(R.id.commentbtnn);
+            studentidd=itemView.findViewById(R.id.post_user_stid);
 
 
         }
@@ -96,6 +100,19 @@ public class CustomAdapter03 extends RecyclerView.Adapter<CustomAdapter03.MyView
                 }
             });
 
+        }
+
+        public void onclick2() {
+
+            studentidd.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent toy1 = new Intent(context,othersprofile.class);
+                    toy1.putExtra("Stid",stid);
+                    context.startActivity(toy1);
+
+                }
+            });
         }
 
     }

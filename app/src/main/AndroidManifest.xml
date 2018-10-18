@@ -52,7 +52,8 @@
         <activity android:name=".CommentsActivitypartfrag" />
         <activity android:name=".CommentsActivityfullfrag" />
         <activity android:name=".CommentsActivityHomefrag" />
-        <activity android:name=".trysection"></activity>
+        <activity android:name=".trysection" />
+        <activity android:name=".othersprofile"></activity>
     </application>
 
 </manifest>
