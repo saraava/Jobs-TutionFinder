@@ -22,6 +22,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
     Context context;
     ArrayList<post> profiles;
     String partkey;
+    int id;
 
     //public String PartPostKey=partfrag_others_postt.PartPostKey;
 
@@ -51,8 +52,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
         Picasso.get().load(profiles.get(position).getProfileimage()).into(holder.profilePic);
 
         partkey=profiles.get(position).getPostID().toString();
-        //Toast.makeText(context,partkey,Toast.LENGTH_SHORT).show();
-
+        //Toast.makeText(context,position,Toast.LENGTH_SHORT).show();
+        id=position;
 
         holder.onClick();
 
@@ -85,6 +86,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
                 public void onClick(View v) {
 
                     Intent toy1 = new Intent(context,CommentsActivitypartfrag.class);
+                    //toy1.putExtra("PartPostKey",partkey);
                     toy1.putExtra("PartPostKey",partkey);
                     context.startActivity(toy1);
 

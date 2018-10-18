@@ -39,6 +39,7 @@ public class CommentsActivitypartfrag extends AppCompatActivity {
     String PartPostKey;
     Random r;
     String l;
+    //int k;
 
 
     @Override
@@ -50,7 +51,8 @@ public class CommentsActivitypartfrag extends AppCompatActivity {
         commentbox = findViewById(R.id.comment_inputs);
         mAuth = FirebaseAuth.getInstance();
 
-        PartPostKey=getIntent().getStringExtra("PartPostKey");
+        //PartPostKey=getIntent().getStringExtra("PartPostKey");
+        PartPostKey= getIntent().getStringExtra("PartPostKey");
 
 
 

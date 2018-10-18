@@ -60,7 +60,13 @@ public class partfrag_others_postt extends AppCompatActivity {
                 }
                 adapter = new MyAdapter(partfrag_others_postt.this,list);
                 recyclerView.setAdapter(adapter);
+
+
+
+
             }
+
+
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
