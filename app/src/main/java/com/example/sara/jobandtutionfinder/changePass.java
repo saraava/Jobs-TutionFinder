@@ -1,11 +1,13 @@
 package com.example.sara.jobandtutionfinder;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -18,6 +20,7 @@ public class changePass extends AppCompatActivity {
     private EditText newPassword,confPassword;
     private FirebaseUser firebaseUser;
     private FirebaseAuth firebaseAuth;
+    private ImageView toogle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,10 +30,19 @@ public class changePass extends AppCompatActivity {
         update=findViewById(R.id.button2);
         newPassword=findViewById(R.id.editText8);
         confPassword=findViewById(R.id.editText9);
+        toogle=findViewById(R.id.toolic);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+
+        toogle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent in=new Intent(changePass.this,trysection.class);
+                startActivity(in);
+            }
+        });
 
         update.setOnClickListener(new View.OnClickListener() {
             @Override

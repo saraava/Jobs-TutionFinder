@@ -22,7 +22,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity android:name=".register" />
         <activity android:name=".profilefrag" />
         <activity android:name=".partfrag" />
@@ -53,6 +52,7 @@
         <activity android:name=".CommentsActivitypartfrag" />
         <activity android:name=".CommentsActivityfullfrag" />
         <activity android:name=".CommentsActivityHomefrag" />
+        <activity android:name=".trysection"></activity>
     </application>
 
 </manifest>

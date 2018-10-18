@@ -85,12 +85,12 @@ public class MainActivity extends AppCompatActivity
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+      /*  int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
-        }
+        }*/
 
         return super.onOptionsItemSelected(item);
     }
@@ -157,30 +157,30 @@ public class MainActivity extends AppCompatActivity
 
         }
         else if(id==R.id.nav_logout){
+
             AlertDialog.Builder builder=new AlertDialog.Builder(MainActivity.this);
-            builder.setTitle("Really Exit?")
-             .setMessage("Are you want to log out?")
-             .setPositiveButton("ok", new DialogInterface.OnClickListener() {
-                 @Override
-                 public void onClick(DialogInterface dialog, int which) {
-                     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-                     mail = user.getEmail();
-                     FirebaseAuth.getInstance().signOut();
-                     finish();
-                     SharedPreferences mySPrefs =PreferenceManager.getDefaultSharedPreferences(MainActivity.this);
-                     SharedPreferences.Editor editor = mySPrefs.edit();
-                     editor.remove("currentUser");
-                     editor.apply();
-                     Intent i= new Intent(MainActivity.this,login.class);
-                     startActivity(i);
-                     Toast.makeText(MainActivity.this,mail+"Successfully logout",Toast.LENGTH_SHORT).show();
+            builder.setTitle("LogOut?")
+                    .setMessage("Really you want to log out?")
+                    .setPositiveButton("ok", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                            mail = user.getEmail();
+                            FirebaseAuth.getInstance().signOut();
+                            finish();
+                            SharedPreferences mySPrefs =PreferenceManager.getDefaultSharedPreferences(MainActivity.this);
+                            SharedPreferences.Editor editor = mySPrefs.edit();
+                            editor.remove("currentUser");
+                            editor.apply();
+                            Intent i= new Intent(MainActivity.this,login.class);
+                            startActivity(i);
+                            Toast.makeText(MainActivity.this,mail+"Successfully logout",Toast.LENGTH_SHORT).show();
 
-                 }
-             }).setNegativeButton("Cancel",null).setCancelable(false);
+                        }
+                    }).setNegativeButton("Cancel",null).setCancelable(false);
 
-                AlertDialog alert=builder.create();
-                alert.show();
-
+            AlertDialog alert=builder.create();
+            alert.show();
 
         }
 

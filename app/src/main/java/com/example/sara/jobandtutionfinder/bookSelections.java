@@ -6,10 +6,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 public class bookSelections extends AppCompatActivity {
 
     private Button pbtn,cbtn,ibtn,gmbtn,hmbtn,bbtn;
+    private ImageView toogle;
 
 
     @Override
@@ -22,6 +24,15 @@ public class bookSelections extends AppCompatActivity {
         gmbtn=(Button) findViewById(R.id.gmbtn);
         hmbtn=(Button) findViewById(R.id.hmathbtn);
         bbtn=(Button) findViewById(R.id.biobtn);
+        toogle=findViewById(R.id.toolic);
+
+        toogle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent in=new Intent(bookSelections.this,trysection.class);
+                startActivity(in);
+            }
+        });
         pbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

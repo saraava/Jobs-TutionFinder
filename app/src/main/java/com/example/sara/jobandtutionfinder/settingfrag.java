@@ -6,10 +6,12 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 public class settingfrag extends AppCompatActivity {
     private Button bSetting,bupdate;
+    private ImageView toogle;
 String studentid,gender;
 
 
@@ -19,6 +21,15 @@ String studentid,gender;
             setContentView(R.layout.activity_settings);
             bSetting=(Button) findViewById(R.id.chng_pass);
             bupdate=(Button) findViewById(R.id.update_profile);
+
+            toogle=findViewById(R.id.toolic);
+            toogle.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent in=new Intent(settingfrag.this,trysection.class);
+                    startActivity(in);
+                }
+            });
             studentid=getIntent().getStringExtra("Studentid");
             gender=getIntent().getStringExtra("Gender");
             bSetting.setOnClickListener(new View.OnClickListener() {

@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".trysection">
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                android:orientation="vertical"
+                android:background="@drawable/img3">
+
+                <TextView
+                    android:id="@+id/settextview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="150dp"
+                    android:text=""
+                    android:textSize="22dp"
+                    android:textColor="#040503"/>
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="425dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <ImageView
+                    android:id="@+id/proimg"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/user" />
+
+                <TextView
+                    android:id="@+id/textViewprofile"
+                    android:layout_width="122dp"
+                    android:layout_height="45dp"
+                    android:gravity="center"
+                    android:text="Profile"
+                    android:textColor="#040503"
+                    android:textSize="22dp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="425dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <ImageView
+                    android:id="@+id/imgpart"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/job" />
+
+                <TextView
+                    android:id="@+id/textViewparttime"
+                    android:layout_width="122dp"
+                    android:layout_height="45dp"
+                    android:gravity="center"
+                    android:text="Part Time"
+                    android:textColor="#040503"
+                    android:textSize="22dp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="425dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <ImageView
+                    android:id="@+id/imgfull"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/job1" />
+
+                <TextView
+                    android:id="@+id/textViewfulltime"
+                    android:layout_width="122dp"
+                    android:layout_height="45dp"
+                    android:gravity="center"
+                    android:text="Full Time"
+                    android:textColor="#040503"
+                    android:textSize="22dp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="425dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <ImageView
+                    android:id="@+id/imgcoaching"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/teacher" />
+
+                <TextView
+                    android:id="@+id/textViewcoaching"
+                    android:layout_width="122dp"
+                    android:layout_height="45dp"
+                    android:gravity="center"
+                    android:text="Coaching"
+                    android:textColor="#040503"
+                    android:textSize="22dp" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="425dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <ImageView
+                    android:id="@+id/imgtuition"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/teacher1" />
+
+                <TextView
+                    android:id="@+id/textViewhometutior"
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp"
+                    android:gravity="center"
+                    android:text="Home Tuitor"
+                    android:textColor="#040503"
+                    android:textSize="22dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="425dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <ImageView
+                    android:id="@+id/imgcv"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/curriculum" />
+
+                <TextView
+                    android:id="@+id/textViewcv"
+                    android:layout_width="122dp"
+                    android:layout_height="45dp"
+                    android:gravity="center"
+                    android:text="CV"
+                    android:textColor="#040503"
+                    android:textSize="22dp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="425dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <ImageView
+                    android:id="@+id/imgbook"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/teacher" />
+
+                <TextView
+                    android:id="@+id/textViewbooks"
+                    android:layout_width="122dp"
+                    android:layout_height="45dp"
+                    android:gravity="center"
+                    android:text="Books"
+                    android:textColor="#040503"
+                    android:textSize="22dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="425dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <ImageView
+                    android:id="@+id/imgset"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/tools" />
+
+                <TextView
+                    android:id="@+id/textViewsettings"
+                    android:layout_width="122dp"
+                    android:layout_height="45dp"
+                    android:gravity="center"
+                    android:text="Settings"
+                    android:textColor="#040503"
+                    android:textSize="22dp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="425dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <ImageView
+                    android:id="@+id/imglog"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/shutdown" />
+
+                <TextView
+                    android:id="@+id/textViewlog"
+                    android:layout_width="122dp"
+                    android:layout_height="45dp"
+                    android:gravity="center"
+                    android:text="Log Out"
+                    android:textColor="#040503"
+                    android:textSize="22dp" />
+            </LinearLayout>
+            </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

@@ -7,6 +7,11 @@
     android:background="#add7ad"
 
     tools:context=".changePass">
+    <ImageView
+        android:id="@+id/toolic"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/chng" />
 
     <TextView
         android:id="@+id/textView11"

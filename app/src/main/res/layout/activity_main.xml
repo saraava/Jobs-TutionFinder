@@ -42,7 +42,6 @@
 
         </LinearLayout>
 
-
         <Button
             android:id="@+id/button6"
             android:layout_width="245dp"
@@ -53,6 +52,8 @@
             android:background="#6aa66a"
             android:text="JOBS"
             android:textColor="#040503" />
+
+
 
         <Button
             android:id="@+id/button7"
@@ -71,8 +72,8 @@
             android:layout_height="45dp"
             android:layout_marginLeft="75dp"
             android:background="#6aa66a"
-            android:textColor="#040503"
-            android:text="PROFILE" />
+            android:text="PROFILE"
+            android:textColor="#040503" />
 
 
 

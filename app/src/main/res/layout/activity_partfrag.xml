@@ -8,7 +8,11 @@
     android:orientation="vertical"
     android:background="#add7ad">
 
-
+    <ImageView
+        android:id="@+id/toolic"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/chng" />
     <Button
         android:id="@+id/c1"
         android:layout_width="245dp"

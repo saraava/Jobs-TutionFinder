@@ -6,13 +6,19 @@
     android:orientation="vertical"
     android:background="#add7ad"
     >
-<LinearLayout
+    <ImageView
+        android:id="@+id/toolic"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/chng" />
+   <LinearLayout
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:orientation="vertical"
     >
 
 </LinearLayout>
+
     <Button
         android:id="@+id/chng_pass"
         android:layout_width="256dp"
