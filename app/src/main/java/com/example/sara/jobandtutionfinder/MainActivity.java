@@ -112,7 +112,7 @@ public class MainActivity extends AppCompatActivity
             i.putExtra("PartPostKey",PartPostKey);
             startActivity(i);
 
-            Toast.makeText(this,PartPostKey,Toast.LENGTH_LONG).show();
+            Toast.makeText(this,"Part time",Toast.LENGTH_LONG).show();
 
 
         } else if (id == R.id.nav_full) {
@@ -153,7 +153,7 @@ public class MainActivity extends AppCompatActivity
             i.putExtra("Studentid",studentid);
             i.putExtra("Gender",gender);
             startActivity(i);
-            Toast.makeText(MainActivity.this,studentid,Toast.LENGTH_SHORT).show();
+            Toast.makeText(MainActivity.this,"Settings",Toast.LENGTH_SHORT).show();
 
         }
         else if(id==R.id.nav_logout){

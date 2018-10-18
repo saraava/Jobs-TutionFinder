@@ -52,6 +52,7 @@ public class registersave extends AppCompatActivity {
                 String checkPass1 = spass.getText().toString().trim();
                 String checkPass2 = confpass.getText().toString().trim();
                 if (checkPass1.contentEquals(checkPass2)) {
+                    sendEmailVerification();
                     sign_in();
 
                 } else {

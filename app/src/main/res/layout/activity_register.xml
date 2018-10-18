@@ -70,7 +70,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:layout_below="@+id/textView8"
-                android:text="Gender"
+                android:text="Select Gender"
                 android:textSize="18dp"/>
 
             <Spinner
@@ -130,7 +130,7 @@
                 android:layout_height="46dp"
                 android:layout_alignParentStart="true"
                 android:layout_below="@+id/depttxt"
-                android:text="Level"
+                android:text="Select Level"
                 android:textSize="18dp"
                 android:layout_alignParentLeft="true" />
 

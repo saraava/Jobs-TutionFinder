@@ -168,7 +168,7 @@ public class register extends AppCompatActivity{
         });
 
 
-        User userProfile = new User(name,email,stid,dept,level,gender,imagePath.toString());
+        User userProfile = new User(name,email,stid,dept,gender,level,imagePath.toString());
         myref.setValue(userProfile);
 
 
@@ -176,7 +176,7 @@ public class register extends AppCompatActivity{
 
         DatabaseReference myrefemail = firebaseDatabase.getReference("All users").child(stid);
 
-        User userProfile1 = new User(name,email,stid,dept,level,gender,imagePath.toString());
+        User userProfile1 = new User(name,email,stid,dept,gender,level,imagePath.toString());
         myrefemail.setValue(userProfile1);
 
 

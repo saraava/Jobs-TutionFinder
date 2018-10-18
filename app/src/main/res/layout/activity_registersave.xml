@@ -17,7 +17,7 @@
         android:ems="10"
         android:textColor="#040503"
         android:defaultFocusHighlightEnabled="true"
-        android:inputType="textPersonName"
+        android:inputType="textEmailAddress"
         android:layout_alignParentRight="true" />
 
     <EditText
